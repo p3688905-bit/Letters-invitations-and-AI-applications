@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>書信 × 邀請函 × AI｜互動學習平台（完整版）</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@latest/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@latest/600.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@latest/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@latest/900.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-tc@latest/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-tc@latest/500.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-tc@latest/700.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#f6f1e4; --paper2:#fdfaf1; --card:#fffdf6;
+  --ink:#2c2620; --ink-soft:#6b6050; --ink-faint:#9c9080;
+  --line:#e5dac2; --line-soft:#efe7d3;
+  --verm:#b8402f; --verm-dark:#8f2c1e; --verm-soft:#f7e5e0;
+  --teal:#16635f; --teal-dark:#0e4a47; --teal-soft:#e0edea;
+  --gold:#b98a2f; --gold-soft:#f5ecd8;
+  --navy:#2f3a52;
+  --shadow:0 10px 30px rgba(60,45,20,.08);
+  --shadow-lg:0 18px 50px rgba(60,45,20,.14);
+}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{
+  font-family:'Noto Sans TC',"PingFang TC","Microsoft JhengHei",sans-serif;
+  background:var(--paper); color:var(--ink); line-height:1.8; font-size:15.5px;
+  background-image:radial-gradient(rgba(150,125,80,.06) 1px, transparent 1px);
+  background-size:24px 24px;
+}
+h1,h2,h3,h4,.serif{font-family:'Noto Serif TC',"PingFang TC",serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:80px 0;position:relative}
+::selection{background:var(--verm-soft)}
+label{cursor:pointer}
+
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+.ctl{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+
+#progressBar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--verm),var(--gold));width:0;z-index:999;transition:width .1s linear}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(246,241,228,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.seal{width:40px;height:40px;background:var(--verm);color:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif TC',serif;font-weight:900;font-size:20px;box-shadow:0 4px 10px rgba(184,64,47,.35);flex-shrink:0}
+.brand b{font-family:'Noto Serif TC',serif;font-size:17px;letter-spacing:1px}
+.brand small{display:block;font-size:11px;color:var(--ink-faint);letter-spacing:2px;font-weight:400}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{display:block;padding:8px 14px;border-radius:8px;text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:500;transition:.2s}
+.nav-links a:hover{background:var(--gold-soft);color:var(--ink)}
+#navToggle{display:none;border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:18px;color:var(--ink);background:var(--paper2)}
+#mobileMenu{display:none;position:fixed;inset:68px 0 0;background:rgba(246,241,228,.98);backdrop-filter:blur(14px);z-index:899;padding:24px}
+#navCheck:checked ~ #mobileMenu{display:block}
+#mobileMenu a{display:block;padding:14px 18px;border-bottom:1px solid var(--line-soft);text-decoration:none;color:var(--ink);font-size:17px;font-weight:500}
+
+.sec-head{display:flex;align-items:flex-start;gap:18px;margin-bottom:38px}
+.sec-badge{width:52px;height:52px;border-radius:13px;background:var(--verm);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;box-shadow:0 8px 18px rgba(184,64,47,.3);flex-shrink:0}
+.sec-badge.teal{background:var(--teal)}
+.sec-badge.gold{background:var(--gold)}
+.sec-badge.navy{background:var(--navy)}
+.sec-head h2{font-size:clamp(24px,3.4vw,32px);letter-spacing:2px;line-height:1.3}
+.sec-head p{color:var(--ink-soft);font-size:14.5px;margin-top:4px;max-width:820px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.sub-title{display:flex;align-items:center;gap:10px;font-size:20px;letter-spacing:1px;margin:44px 0 18px;font-weight:700}
+.sub-title::before{content:'';width:8px;height:22px;background:var(--verm);border-radius:3px}
+.sub-title.tl::before{background:var(--teal)}
+.sub-title.gl::before{background:var(--gold)}
+.tag{display:inline-block;padding:3px 11px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:1px}
+.tag-red{background:var(--verm-soft);color:var(--verm-dark)}
+.tag-teal{background:var(--teal-soft);color:var(--teal-dark)}
+.tag-gold{background:var(--gold-soft);color:#7c5a15}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;border:none;font-size:15px;font-weight:700;font-family:inherit;letter-spacing:1px;transition:.22s;text-decoration:none;cursor:pointer}
+.btn-verm{background:var(--verm);color:#fff;box-shadow:0 8px 20px rgba(184,64,47,.32)}
+.btn-verm:hover{background:var(--verm-dark);transform:translateY(-2px)}
+.btn-teal{background:var(--teal);color:#fff;box-shadow:0 8px 20px rgba(22,99,95,.3)}
+.btn-teal:hover{background:var(--teal-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper2)}
+.btn-white{background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.65);color:#fff}
+.btn-white:hover{background:rgba(255,255,255,.3)}
+.btn-mini{display:inline-flex;align-items:center;padding:9px 16px;border-radius:9px;border:1.5px solid var(--line);background:var(--paper2);font-size:13px;font-weight:700;color:var(--ink-soft);font-family:inherit;transition:.2s;cursor:pointer;text-decoration:none}
+.btn-mini:hover{border-color:var(--verm);color:var(--verm)}
+.btn-mini.solid{background:var(--teal);color:#fff;border-color:var(--teal)}
+.note{border-radius:14px;padding:16px 20px;font-size:14px;display:flex;gap:12px;align-items:flex-start}
+.note .ic{font-size:18px;line-height:1.6}
+.note.warn{background:#fbeae6;border:1px solid #edc3b8;color:#7c2d1f}
+.note.tip{background:var(--teal-soft);border:1px solid #bcd8d2;color:var(--teal-dark)}
+.note.gold{background:var(--gold-soft);border:1px solid #e3cf9d;color:#6d4d10}
+.note ul{margin:6px 0 0 18px}
+.note li{margin-bottom:4px}
+.prompt-box{background:#22262e;color:#d9e2ec;border-radius:12px;padding:16px 18px;font-size:13.5px;line-height:1.85;white-space:pre-wrap;font-family:inherit;margin-top:12px;position:relative}
+.prompt-box::before{content:'💬 範例提示語';display:block;font-size:11px;letter-spacing:2px;color:#8fa0b5;margin-bottom:8px}
+.copy-btn{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.12);color:#cfd9e6;border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:4px 12px;font-size:12px;cursor:pointer;transition:.2s;font-family:inherit}
+.copy-btn:hover{background:rgba(255,255,255,.25)}
+
+#hero{padding:150px 0 90px;overflow:hidden}
+#hero::before{content:'信';position:absolute;right:-40px;top:60px;font-family:'Noto Serif TC',serif;font-size:min(46vw,430px);font-weight:900;color:rgba(184,64,47,.05);line-height:1;pointer-events:none;user-select:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero-chip{display:inline-flex;align-items:center;gap:8px;background:var(--gold-soft);border:1px solid #e3cf9d;color:#6d4d10;border-radius:99px;padding:6px 16px;font-size:13px;font-weight:700;letter-spacing:2px;margin-bottom:22px}
+#hero h1{font-size:clamp(34px,5vw,56px);font-weight:900;letter-spacing:3px;line-height:1.25}
+#hero h1 em{font-style:normal;color:var(--verm)}
+.hero-sub{font-family:'Noto Serif TC',serif;font-size:clamp(16px,2vw,20px);color:var(--teal-dark);margin-top:14px;letter-spacing:2px}
+.hero-desc{color:var(--ink-soft);margin-top:16px;max-width:580px}
+.hero-btns{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 12px;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:'Noto Serif TC',serif;font-size:28px;color:var(--verm);font-weight:900;line-height:1.2}
+.stat span{font-size:12px;color:var(--ink-soft);letter-spacing:1px}
+.hero-art{position:relative}
+.hero-frame{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow-lg);transform:rotate(1.5deg)}
+.hero-frame svg{width:100%;height:auto;display:block;border-radius:12px}
+.hero-art .mini-seal{position:absolute;bottom:-18px;left:-18px;width:64px;height:64px;background:var(--verm);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Noto Serif TC',serif;font-weight:900;font-size:22px;writing-mode:vertical-rl;letter-spacing:6px;box-shadow:0 10px 24px rgba(184,64,47,.4);transform:rotate(-6deg);padding:8px 0}
+
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mod-card{padding:28px 24px;position:relative;overflow:hidden;transition:.25s}
+.mod-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.mod-card .no{font-family:'Noto Serif TC',serif;font-size:44px;font-weight:900;color:rgba(184,64,47,.16);line-height:1}
+.mod-card h3{font-size:19px;margin:10px 0 8px;letter-spacing:1px}
+.mod-card p{font-size:13.5px;color:var(--ink-soft)}
+.mod-card ul{list-style:none;margin-top:14px}
+.mod-card li{font-size:13px;color:var(--ink-soft);padding:5px 0 5px 20px;position:relative}
+.mod-card li::before{content:'◆';position:absolute;left:0;color:var(--gold);font-size:10px;top:9px}
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;position:relative}
+.path-step{padding:20px 18px;text-align:center;position:relative}
+.path-step .pn{width:38px;height:38px;border-radius:50%;background:var(--paper2);border:2px solid var(--verm);color:var(--verm);font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-family:'Noto Serif TC',serif}
+.path-step h4{font-size:15px;letter-spacing:1px}
+.path-step p{font-size:12.5px;color:var(--ink-faint);margin-top:4px}
+.path::before{content:'';position:absolute;top:39px;left:12%;right:12%;border-top:2px dashed #d9b8ab;z-index:0}
+.obj-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px}
+.obj-item{flex:1;min-width:240px;background:var(--teal-soft);border:1px solid #bcd8d2;border-radius:14px;padding:16px 20px;font-size:14px;color:var(--teal-dark);display:flex;gap:10px}
+.obj-item b{color:var(--teal)}
+
+.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.prin-card{padding:24px;text-align:center;transition:.25s}
+.prin-card:hover{transform:translateY(-4px)}
+.prin-card .pi{width:52px;height:52px;margin:0 auto 14px;border-radius:14px;background:var(--verm-soft);color:var(--verm);display:flex;align-items:center;justify-content:center;font-size:24px}
+.prin-card h4{font-size:16px;letter-spacing:1px;margin-bottom:8px}
+.prin-card p{font-size:13.5px;color:var(--ink-soft)}
+.split-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cls-card{padding:24px}
+.cls-card h4{font-size:16px;letter-spacing:2px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.cls-row{display:flex;gap:12px;padding:11px 12px;border-radius:10px;transition:.2s;align-items:baseline}
+.cls-row:hover{background:var(--gold-soft)}
+.cls-row b{font-family:'Noto Serif TC',serif;color:var(--verm-dark);flex-shrink:0;font-size:15px;min-width:52px}
+.cls-row span{font-size:13.5px;color:var(--ink-soft)}
+.q2-banner{background:linear-gradient(120deg,var(--verm) 0%,#a03724 100%);color:#fff;border-radius:18px;padding:34px;margin-top:20px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.q2-banner::after{content:'要';position:absolute;right:8px;bottom:-30px;font-family:'Noto Serif TC',serif;font-size:160px;font-weight:900;color:rgba(255,255,255,.08)}
+.q2-banner h4{font-size:18px;letter-spacing:2px;margin-bottom:12px}
+.q2-banner .qs{display:flex;gap:14px;flex-wrap:wrap}
+.q2-banner .q{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:12px 22px;font-family:'Noto Serif TC',serif;font-size:19px;letter-spacing:2px}
+.q2-banner p{margin-top:14px;font-size:13.5px;opacity:.92;max-width:640px}
+.trait-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}
+.trait{padding:20px;text-align:center}
+.trait b{display:block;font-family:'Noto Serif TC',serif;font-size:19px;color:var(--teal);margin-bottom:6px;letter-spacing:2px}
+.trait p{font-size:13px;color:var(--ink-soft)}
+
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 20px}
+.fbtn{border:1.5px solid var(--line);background:var(--paper2);border-radius:99px;padding:8px 20px;font-size:13.5px;font-weight:700;color:var(--ink-soft);font-family:inherit;transition:.2s;letter-spacing:1px;cursor:pointer;display:inline-block}
+.fbtn:hover{border-color:var(--verm);color:var(--verm)}
+#tfAll:checked ~ .filter-bar [for="tfAll"],
+#tfSocial:checked ~ .filter-bar [for="tfSocial"],
+#tfDoc:checked ~ .filter-bar [for="tfDoc"],
+#tfPub:checked ~ .filter-bar [for="tfPub"],
+#tfCert:checked ~ .filter-bar [for="tfCert"]{background:var(--ink);border-color:var(--ink);color:var(--paper2)}
+#tfSocial:checked ~ .types-grid .type-card:not([data-cat="social"]),
+#tfDoc:checked ~ .types-grid .type-card:not([data-cat="doc"]),
+#tfPub:checked ~ .types-grid .type-card:not([data-cat="pub"]),
+#tfCert:checked ~ .types-grid .type-card:not([data-cat="cert"]){display:none}
+.types-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.type-card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:16px 16px 14px;position:relative;overflow:hidden;transition:.25s}
+.type-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--cat-color,var(--gold))}
+.type-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.type-card h4{font-size:16px;letter-spacing:1px}
+.type-card p{font-size:12.5px;color:var(--ink-soft);margin-top:4px}
+.type-card .cat{font-size:10.5px;letter-spacing:1px;color:var(--ink-faint);margin-top:8px;display:block}
+.chips-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.chip{background:var(--paper2);border:1.5px dashed var(--gold);border-radius:99px;padding:8px 18px;font-size:13.5px;font-weight:500;color:#6d4d10}
+
+.env-toggle{display:inline-flex;background:var(--paper2);border:1.5px solid var(--line);border-radius:12px;padding:5px;gap:5px;margin-bottom:24px}
+.env-tbtn{padding:9px 26px;border-radius:9px;font-size:14.5px;font-weight:700;font-family:inherit;letter-spacing:2px;color:var(--ink-soft);transition:.2s;cursor:pointer;display:inline-block}
+#emodeV:checked ~ .env-toggle [for="emodeV"],
+#emodeH:checked ~ .env-toggle [for="emodeH"]{background:var(--verm);color:#fff;box-shadow:0 4px 12px rgba(184,64,47,.3)}
+.env-layout{display:grid;grid-template-columns:minmax(280px,520px) 1fr;gap:28px;align-items:start}
+.envbox{position:relative;margin:0 auto;background:linear-gradient(160deg,#fffdf4,#f6efdc);border:1.5px solid #d8c9a5;border-radius:10px;box-shadow:var(--shadow-lg);display:none}
+.envbox::after{content:'';position:absolute;inset:8px;border:1px solid rgba(185,138,47,.25);border-radius:6px;pointer-events:none}
+.env-vert{width:100%;max-width:380px;aspect-ratio:3/4}
+.env-hor{width:100%;max-width:580px;aspect-ratio:8/5}
+#emodeV:checked ~ .env-layout .env-vert{display:block}
+#emodeH:checked ~ .env-layout .env-hor{display:block}
+.env-zone{position:absolute;border:1.5px dashed var(--gold);border-radius:8px;background:rgba(255,253,246,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;text-align:center;transition:.2s;padding:6px;color:var(--ink-soft)}
+.env-zone:hover{background:var(--gold-soft)}
+.env-zone .zl{position:absolute;top:-11px;left:8px;background:var(--gold);color:#fff;font-size:10px;font-weight:700;border-radius:5px;padding:1px 8px;letter-spacing:1px}
+#ezvStamp:checked ~ .env-layout [for="ezvStamp"],
+#ezvRight:checked ~ .env-layout [for="ezvRight"],
+#ezvCenter:checked ~ .env-layout [for="ezvCenter"],
+#ezvLeft:checked ~ .env-layout [for="ezvLeft"],
+#ezhStamp:checked ~ .env-layout [for="ezhStamp"],
+#ezhTop:checked ~ .env-layout [for="ezhTop"],
+#ezhBottom:checked ~ .env-layout [for="ezhBottom"]{background:var(--verm-soft);border:2px solid var(--verm);color:var(--verm-dark)}
+#ezvStamp:checked ~ .env-layout [for="ezvStamp"] .zl,
+#ezvRight:checked ~ .env-layout [for="ezvRight"] .zl,
+#ezvCenter:checked ~ .env-layout [for="ezvCenter"] .zl,
+#ezvLeft:checked ~ .env-layout [for="ezvLeft"] .zl,
+#ezhStamp:checked ~ .env-layout [for="ezhStamp"] .zl,
+#ezhTop:checked ~ .env-layout [for="ezhTop"] .zl,
+#ezhBottom:checked ~ .env-layout [for="ezhBottom"] .zl{background:var(--verm)}
+.vtext{writing-mode:vertical-rl;letter-spacing:4px}
+.env-info{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);min-height:190px}
+.ei{display:none}
+.ei h4{font-size:17px;color:var(--verm-dark);letter-spacing:1px;margin-bottom:8px}
+.ei p{font-size:14px;color:var(--ink-soft)}
+.ei .kw{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+#emodeV:checked ~ #ezvStamp:checked ~ .env-layout .eiv-stamp{display:block}
+#emodeV:checked ~ #ezvRight:checked ~ .env-layout .eiv-right{display:block}
+#emodeV:checked ~ #ezvCenter:checked ~ .env-layout .eiv-center{display:block}
+#emodeV:checked ~ #ezvLeft:checked ~ .env-layout .eiv-left{display:block}
+#emodeH:checked ~ #ezhStamp:checked ~ .env-layout .eih-stamp{display:block}
+#emodeH:checked ~ #ezhTop:checked ~ .env-layout .eih-top{display:block}
+#emodeH:checked ~ #ezhBottom:checked ~ .env-layout .eih-bottom{display:block}
+
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.seg-col{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.seg-col header{padding:16px 20px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.seg-col header h4{font-size:17px;letter-spacing:3px}
+.seg-col header span{font-size:12px;opacity:.85}
+.seg-col.s1 header{background:var(--gold)}
+.seg-col.s2 header{background:var(--verm)}
+.seg-col.s3 header{background:var(--teal)}
+.lp-item{border-top:1px solid var(--line-soft)}
+.lp-item summary{display:flex;gap:12px;align-items:center;padding:13px 18px;cursor:pointer;list-style:none;transition:.2s;font-size:14.5px;font-weight:700;letter-spacing:1px}
+.lp-item summary::-webkit-details-marker{display:none}
+.lp-item summary:hover{background:var(--paper2)}
+.lp-item .arr{color:var(--ink-faint);transition:.25s;font-size:12px;margin-left:auto}
+.lp-item[open] .arr{transform:rotate(90deg)}
+.lp-body-in{padding:0 18px 16px;font-size:13px;color:var(--ink-soft)}
+.lp-body-in em{display:block;font-style:normal;margin-top:6px;color:var(--teal-dark);background:var(--teal-soft);border-radius:8px;padding:7px 11px;font-size:12.5px;line-height:1.8}
+.lp-body-in em b{color:var(--teal-dark)}
+
+.letter-sample-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start;margin-top:22px}
+.paper-letter{background:#fffdf4;border:1px solid var(--line);border-radius:6px;padding:40px 42px;font-family:'Noto Serif TC',serif;font-size:15px;line-height:2.15;position:relative;box-shadow:var(--shadow-lg);white-space:pre-wrap;letter-spacing:.5px}
+.paper-letter::before{content:'';position:absolute;inset:12px;border:1px solid rgba(184,64,47,.35);pointer-events:none}
+.paper-letter::after{content:'';position:absolute;inset:16px;border:1px solid rgba(184,64,47,.18);pointer-events:none}
+.paper-letter sup{color:var(--verm);font-weight:700;font-size:11px;font-family:'Noto Sans TC',sans-serif}
+.paper-letter .sign{margin-top:14px;text-align:right}
+.paper-letter .ann{color:var(--ink-soft);font-size:13px}
+.legend{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+.legend h4{font-size:16px;letter-spacing:1px;margin-bottom:14px}
+.legend-item{display:flex;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line-soft);font-size:12.5px;align-items:baseline}
+.legend-item:last-child{border:none}
+.legend-item .mn{color:var(--verm);font-weight:900;min-width:24px;font-family:'Noto Serif TC',serif}
+.legend-item b{color:var(--teal-dark)}
+
+.ttabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.ttab{border:1.5px solid var(--line);background:var(--paper2);border-radius:11px;padding:10px 24px;font-size:14.5px;font-weight:700;font-family:inherit;letter-spacing:2px;color:var(--ink-soft);transition:.2s;cursor:pointer;display:inline-block}
+#tt1:checked ~ .ttabs [for="tt1"],
+#tt2:checked ~ .ttabs [for="tt2"],
+#tt3:checked ~ .ttabs [for="tt3"]{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 6px 14px rgba(22,99,95,.28)}
+.tpanel{display:none;animation:fadeUp .4s ease}
+#tt1:checked ~ #p1{display:block}
+#tt2:checked ~ #p2{display:block}
+#tt3:checked ~ #p3{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.t-table-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.t-table{width:100%;border-collapse:collapse;min-width:640px;font-size:13.5px}
+.t-table th{background:var(--teal);color:#fff;padding:13px 16px;text-align:left;letter-spacing:2px;font-weight:700;white-space:nowrap}
+.t-table td{padding:12px 16px;border-top:1px solid var(--line-soft);vertical-align:top}
+.t-table tr:hover td{background:var(--paper2)}
+.t-table td:first-child{font-family:'Noto Serif TC',serif;font-weight:700;color:var(--verm-dark);white-space:nowrap}
+.term-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.term-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.term-card h5{font-size:14.5px;letter-spacing:1px;color:var(--teal-dark);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.term-card h5::before{content:'';width:7px;height:7px;background:var(--verm);border-radius:50%}
+.term-chips{display:flex;flex-wrap:wrap;gap:7px}
+.term-chips span{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-family:'Noto Serif TC',serif;font-size:14px;letter-spacing:1px}
+
+.etiq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.etiq-card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.etiq-card summary{padding:15px 18px;font-weight:700;font-family:'Noto Serif TC',serif;letter-spacing:2px;font-size:15.5px;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;transition:.2s}
+.etiq-card summary::-webkit-details-marker{display:none}
+.etiq-card summary::after{content:'＋';color:var(--verm);font-weight:900}
+.etiq-card[open] summary{background:var(--teal);color:#fff}
+.etiq-card[open] summary::after{content:'−'}
+.etiq-card .ec-body{padding:14px 18px;font-size:13px;color:var(--ink-soft)}
+.etiq-card .ec-body b{color:var(--teal-dark)}
+.etiq-card .ec-body p{margin-bottom:7px}
+.etiq-card .ec-note{margin-top:8px;background:var(--gold-soft);border-radius:8px;padding:8px 10px;font-size:12px;color:#6d4d10}
+
+.quiz-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.quiz-card{padding:22px;position:relative}
+.quiz-card h4{font-size:15.5px;margin-bottom:14px;line-height:1.6}
+.quiz-card h4 .qn{display:inline-flex;width:26px;height:26px;border-radius:8px;background:var(--verm);color:#fff;align-items:center;justify-content:center;font-size:13px;margin-right:9px;font-family:'Noto Serif TC',serif}
+.qopts{display:block}
+.qopt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:var(--paper2);border-radius:11px;padding:11px 16px;margin-bottom:9px;font-size:13.5px;cursor:pointer;font-family:inherit;transition:.2s;color:var(--ink)}
+.qopt:hover{border-color:var(--teal);background:var(--teal-soft)}
+.qradio:checked ~ .qexp{display:block}
+.qradio:checked ~ .qopts .qopt.right{border-color:#2e7d4f;background:#e2f2e7;color:#1e5a37;font-weight:700}
+#q1a:checked ~ .qopts [for="q1a"]:not(.right),#q1b:checked ~ .qopts [for="q1b"]:not(.right),
+#q1c:checked ~ .qopts [for="q1c"]:not(.right),#q1d:checked ~ .qopts [for="q1d"]:not(.right),
+#q2a:checked ~ .qopts [for="q2a"]:not(.right),#q2b:checked ~ .qopts [for="q2b"]:not(.right),
+#q2c:checked ~ .qopts [for="q2c"]:not(.right),#q2d:checked ~ .qopts [for="q2d"]:not(.right),
+#q3a:checked ~ .qopts [for="q3a"]:not(.right),#q3b:checked ~ .qopts [for="q3b"]:not(.right),
+#q3c:checked ~ .qopts [for="q3c"]:not(.right),#q3d:checked ~ .qopts [for="q3d"]:not(.right),
+#q4a:checked ~ .qopts [for="q4a"]:not(.right),#q4b:checked ~ .qopts [for="q4b"]:not(.right),
+#q4c:checked ~ .qopts [for="q4c"]:not(.right),#q4d:checked ~ .qopts [for="q4d"]:not(.right){border-color:var(--verm);background:var(--verm-soft);color:var(--verm-dark)}
+.qexp{display:none;font-size:13px;color:var(--ink-soft);background:var(--gold-soft);border-radius:10px;padding:12px 14px;margin-top:6px}
+
+.flow-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative;margin-top:22px}
+.flow-4::before{content:'';position:absolute;top:33px;left:10%;right:10%;border-top:2px dashed #cbb98f;z-index:0}
+.flow-step{position:relative;z-index:1;text-align:center;padding:0 6px}
+.flow-step .fc{width:66px;height:66px;border-radius:50%;background:var(--card);border:2px solid var(--gold);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:var(--shadow)}
+.flow-step h4{font-size:15.5px;letter-spacing:1px}
+.flow-step p{font-size:12.5px;color:var(--ink-soft);margin-top:5px}
+.elem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.elem{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:14px;align-items:flex-start;transition:.25s}
+.elem:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.elem .en{font-family:'Noto Serif TC',serif;font-size:26px;font-weight:900;color:var(--gold);line-height:1;flex-shrink:0}
+.elem b{font-size:14px;letter-spacing:.5px;display:block}
+.elem p{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ai-card{padding:24px;border-top:4px solid var(--teal)}
+.ai-card.c2{border-top-color:var(--verm)}
+.ai-card.c3{border-top-color:var(--gold)}
+.ai-card.c4{border-top-color:var(--navy)}
+.ai-card h4{font-size:17px;letter-spacing:1px;display:flex;align-items:center;gap:10px}
+.ai-card h4 .aic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;background:var(--paper)}
+.ai-card>p{font-size:13.5px;color:var(--ink-soft);margin-top:10px}
+.risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.risk-card{padding:22px;display:flex;gap:16px}
+.risk-card .lv{flex-shrink:0;font-size:11.5px;font-weight:900;letter-spacing:1px;border-radius:8px;padding:5px 10px;height:fit-content;white-space:nowrap}
+.lv-hi{background:var(--verm);color:#fff}
+.lv-md{background:#d97706;color:#fff}
+.lv-lo{background:#64748b;color:#fff}
+.risk-card h4{font-size:15.5px;margin-bottom:6px}
+.risk-card p{font-size:13px;color:var(--ink-soft)}
+.guard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.guard{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:13px;padding:18px;transition:.25s}
+.guard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.guard small{font-size:11px;font-weight:900;color:var(--teal);letter-spacing:2px}
+.guard h4{font-size:14.5px;margin:6px 0}
+.guard p{font-size:12.5px;color:var(--ink-soft)}
+.sample-letter-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:start;margin-top:22px}
+
+#workshop{background:linear-gradient(180deg,transparent,rgba(22,99,95,.05) 15%,rgba(22,99,95,.05) 85%,transparent)}
+.wk-shell{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-lg);overflow:hidden;position:relative}
+.wk-head{background:linear-gradient(120deg,var(--teal-dark),var(--teal));padding:28px 32px;color:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.wk-head h3{font-size:21px;letter-spacing:3px}
+.wk-head p{font-size:12.5px;opacity:.85;margin-top:3px;letter-spacing:1px}
+.wk-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn-export{background:#fff;color:var(--teal-dark);border:none;border-radius:11px;padding:10px 20px;font-weight:900;font-family:inherit;font-size:13.5px;letter-spacing:1px;box-shadow:0 6px 14px rgba(0,0,0,.22);transition:.2s;display:inline-flex;align-items:center;gap:7px;cursor:pointer}
+.btn-export:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.28)}
+#btnReset{background:none;border:none;color:rgba(255,255,255,.75);font-size:12.5px;cursor:pointer;font-family:inherit;text-decoration:underline dotted}
+#btnReset:hover{color:#fff}
+.stepbar{display:flex;padding:0 22px;background:var(--paper2);border-bottom:1px solid var(--line);overflow-x:auto}
+.sdot{flex:1;min-width:120px;display:flex;align-items:center;gap:10px;padding:16px 10px;cursor:pointer;border-bottom:3px solid transparent;transition:.2s;white-space:nowrap}
+.sdot .sn{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);background:#fff;color:var(--ink-faint);font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Noto Serif TC',serif;transition:.2s}
+.sdot .sl{font-size:13px;font-weight:700;color:var(--ink-faint)}
+#ws1:checked ~ .stepbar [for="ws1"],#ws2:checked ~ .stepbar [for="ws2"],#ws3:checked ~ .stepbar [for="ws3"],
+#ws4:checked ~ .stepbar [for="ws4"],#ws5:checked ~ .stepbar [for="ws5"],#ws6:checked ~ .stepbar [for="ws6"]{border-bottom-color:var(--verm)}
+#ws1:checked ~ .stepbar [for="ws1"] .sn,#ws2:checked ~ .stepbar [for="ws2"] .sn,#ws3:checked ~ .stepbar [for="ws3"] .sn,
+#ws4:checked ~ .stepbar [for="ws4"] .sn,#ws5:checked ~ .stepbar [for="ws5"] .sn,#ws6:checked ~ .stepbar [for="ws6"] .sn{border-color:var(--verm);color:var(--verm);background:var(--verm-soft)}
+#ws1:checked ~ .stepbar [for="ws1"] .sl,#ws2:checked ~ .stepbar [for="ws2"] .sl,#ws3:checked ~ .stepbar [for="ws3"] .sl,
+#ws4:checked ~ .stepbar [for="ws4"] .sl,#ws5:checked ~ .stepbar [for="ws5"] .sl,#ws6:checked ~ .stepbar [for="ws6"] .sl{color:var(--ink)}
+.wk-body{padding:36px 34px;min-height:420px}
+.wstep{display:none;animation:fadeUp .4s ease}
+#ws1:checked ~ .wk-body [data-panel="0"]{display:block}
+#ws2:checked ~ .wk-body [data-panel="1"]{display:block}
+#ws3:checked ~ .wk-body [data-panel="2"]{display:block}
+#ws4:checked ~ .wk-body [data-panel="3"]{display:block}
+#ws5:checked ~ .wk-body [data-panel="4"]{display:block}
+#ws6:checked ~ .wk-body [data-panel="5"]{display:block}
+.wstep>h4{font-size:19px;letter-spacing:2px;margin-bottom:6px}
+.wstep>.wsub{font-size:13.5px;color:var(--ink-soft);margin-bottom:18px}
+.wstep-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px;padding-top:22px;border-top:1px dashed var(--line);flex-wrap:wrap}
+.goal-box{background:var(--gold-soft);border:1.5px dashed var(--gold);border-radius:13px;padding:14px 20px;font-size:13.5px;color:#6d4d10;margin-bottom:20px;line-height:1.9}
+.goal-box b{color:#8a6516}
+.wsub-h{font-size:15.5px;letter-spacing:2px;margin:22px 0 12px;color:var(--teal-dark);display:flex;align-items:center;gap:9px;font-family:'Noto Serif TC',serif;flex-wrap:wrap}
+.wsub-h::before{content:'';width:18px;height:3px;background:var(--teal);border-radius:2px}
+.settings-echo{background:var(--teal-soft);border:1px solid #bcd8d2;border-radius:12px;padding:13px 18px;font-size:13.5px;color:var(--teal-dark);margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px 22px}
+.settings-echo b{color:var(--teal-dark)}
+.settings-echo em{font-style:normal;font-weight:700}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:7px;color:var(--ink)}
+.field label small{color:var(--ink-faint);font-weight:400}
+.field input,.field select,.field textarea{width:100%;padding:12px 15px;border:1.5px solid var(--line);border-radius:11px;font-size:14.5px;font-family:inherit;background:var(--paper2);color:var(--ink);transition:.2s;line-height:1.7}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--verm);background:#fff;box-shadow:0 0 0 4px rgba(184,64,47,.1)}
+.field textarea{resize:vertical;min-height:96px}
+.frow{display:grid;gap:16px}
+.frow.c2{grid-template-columns:1fr 1fr}
+.core-table{width:100%;border-collapse:collapse;margin-top:6px}
+.core-table th{background:var(--gold-soft);color:#6d4d10;padding:11px 14px;font-size:13px;letter-spacing:1px;text-align:left;border:1px solid var(--line)}
+.core-table td{border:1px solid var(--line);padding:10px 14px;vertical-align:top}
+.core-table td:first-child{width:34%;background:var(--paper2)}
+.core-table td b{font-size:14px;display:block;font-family:'Noto Serif TC',serif}
+.core-table td small{font-size:12px;color:var(--ink-soft)}
+.core-table textarea{width:100%;border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13.5px;font-family:inherit;background:#fff;min-height:64px;resize:vertical}
+.core-table textarea:focus{outline:none;border-color:var(--teal)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.star-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.star-item{background:var(--paper2);border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;font-size:12.5px}
+.star-item b{display:block;font-size:13.5px;margin-bottom:2px}
+.star-item .st{float:right;font-weight:900;font-size:15px;color:#c9bfa8}
+.star-item.ok{border-color:#2e7d4f;background:#e8f4ec}
+.star-item.ok .st{color:#2e7d4f}
+.ai-out{background:#22262e;border-radius:14px;overflow:hidden;margin-bottom:16px}
+.ai-out-bar{display:flex;align-items:center;gap:7px;padding:11px 16px;background:#1a1d24;font-size:11.5px;color:#8fa0b5;letter-spacing:2px}
+.ai-out-bar i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.ai-out-bar i:nth-child(1){background:#e0645c}.ai-out-bar i:nth-child(2){background:#e8b93e}.ai-out-bar i:nth-child(3){background:#5fbf7a}
+.ai-out-bar span{margin-left:6px}
+.ai-out-body{padding:18px 20px;color:#dce5f0;font-size:13.5px;line-height:1.95;white-space:pre-wrap;min-height:150px;max-height:360px;overflow-y:auto;font-family:inherit}
+.ai-hint{font-size:12px;color:var(--ink-faint);margin:-8px 0 14px}
+.gen-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.tpl-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.eval-row{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 14px}
+.eval-row label{display:flex;align-items:center;gap:7px;background:var(--paper2);border:1.5px solid var(--line);border-radius:99px;padding:8px 16px;font-size:13px;cursor:pointer;transition:.2s}
+.eval-row input{accent-color:var(--verm)}
+.eval-row label.checked,.eval-row label:has(input:checked){border-color:var(--teal);background:var(--teal-soft);font-weight:700}
+.blocks-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.block-card{border:1.5px solid var(--line);border-radius:16px;padding:22px;background:var(--paper2)}
+.block-card h5{font-size:16px;letter-spacing:2px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.block-card .bd{font-size:12.5px;color:var(--ink-soft);margin-bottom:14px}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+.draft-view{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.done-banner{display:none;background:linear-gradient(120deg,var(--verm),#c76a3a);color:#fff;border-radius:16px;padding:24px 28px;margin-top:22px;box-shadow:var(--shadow-lg)}
+.done-banner.show{display:block;animation:fadeUp .5s ease}
+.done-banner h4{font-size:19px;letter-spacing:2px;margin-bottom:6px}
+.done-banner p{font-size:13.5px;opacity:.95}
+.done-banner .btn{margin-top:16px}
+
+/* ===== 圖片上傳 ===== */
+.upload-zone{display:block;border:2px dashed var(--gold);border-radius:16px;background:var(--gold-soft);padding:26px;text-align:center;cursor:pointer;transition:.2s;margin:6px 0 16px}
+.upload-zone:hover,.upload-zone.over{background:#f2e3bd;border-color:var(--verm)}
+.upload-zone .uz-ic{font-size:34px;display:block;margin-bottom:6px}
+.upload-zone b{font-size:15px;letter-spacing:1px;color:#6d4d10}
+.upload-zone p{font-size:12.5px;color:var(--ink-faint);margin-top:4px}
+.img-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:10px}
+.img-card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);animation:fadeUp .35s ease}
+.img-thumb{background:#efe8d6;display:flex;align-items:center;justify-content:center;max-height:240px;overflow:hidden}
+.img-thumb img{width:100%;height:auto;display:block;object-fit:contain;max-height:240px}
+.img-meta{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.img-name{font-size:11.5px;color:var(--ink-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.img-cap{width:100%;padding:9px 12px;border:1.5px solid var(--line);border-radius:9px;font-size:13px;font-family:inherit;background:var(--paper2);color:var(--ink)}
+.img-cap:focus{outline:none;border-color:var(--teal);background:#fff}
+.img-del{align-self:flex-end;border-color:#edc3b8;color:var(--verm-dark)}
+.img-del:hover{background:var(--verm-soft);border-color:var(--verm)}
+.img-empty{font-size:13px;color:var(--ink-faint);text-align:center;padding:10px 0 4px}
+
+.asg-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.asg-list{list-style:none;padding:26px}
+.asg-list li{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line-soft);font-size:14px;align-items:flex-start}
+.asg-list li:last-child{border:none}
+.asg-list .an{width:28px;height:28px;border-radius:9px;background:var(--verm-soft);color:var(--verm);font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-family:'Noto Serif TC',serif}
+.check-list{padding:26px}
+.check-list h4{font-size:17px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.check-item{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:10px;cursor:pointer;transition:.2s;font-size:14px}
+.check-item:hover{background:var(--paper2)}
+.check-item input{width:19px;height:19px;accent-color:var(--teal);flex-shrink:0}
+.check-item.checked{color:var(--teal-dark)}
+.check-item.checked span{text-decoration:line-through;opacity:.7}
+.check-progress{margin-top:16px;height:10px;border-radius:99px;background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.check-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),#3aa08c);width:0;transition:.4s}
+.check-progress-txt{font-size:12.5px;color:var(--ink-soft);margin-top:8px}
+
+footer{background:#242019;color:#cbbfa8;padding:54px 0 36px;margin-top:60px}
+footer .f-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:34px}
+footer h5{color:#fff;font-size:15px;letter-spacing:2px;margin-bottom:14px}
+footer p,footer li{font-size:13px;line-height:2}
+footer ul{list-style:none}
+footer a{color:#cbbfa8;text-decoration:none}
+footer a:hover{color:#fff}
+.f-seal{width:46px;height:46px;background:var(--verm);border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Noto Serif TC',serif;font-weight:900;font-size:22px;margin-bottom:14px}
+.f-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:22px;font-size:12px;text-align:center;opacity:.7;letter-spacing:1px}
+#toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:#242019;color:#fff;padding:13px 28px;border-radius:99px;font-size:14px;z-index:1200;transition:.35s cubic-bezier(.34,1.56,.64,1);opacity:0;box-shadow:0 12px 30px rgba(0,0,0,.3);pointer-events:none}
+#toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+#toTop{position:fixed;right:26px;bottom:26px;width:50px;height:50px;border-radius:14px;background:var(--verm);color:#fff;border:none;font-size:20px;cursor:pointer;box-shadow:0 10px 24px rgba(184,64,47,.4);opacity:0;pointer-events:none;transition:.3s;z-index:800}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--verm-dark);transform:translateY(-3px)}
+
+@media(max-width:1024px){
+  .hero-grid,.sample-letter-wrap,.two-col,.draft-view,.blocks-2,.letter-sample-wrap{grid-template-columns:1fr}
+  .mod-grid,.three-grid,.term-grid,.elem-grid,.etiq-grid{grid-template-columns:1fr 1fr}
+  .types-grid,.trait-grid,.guard-grid,.flow-4{grid-template-columns:1fr 1fr}
+  .flow-4::before{display:none}
+  .seg-grid{grid-template-columns:1fr}
+  .env-layout{grid-template-columns:1fr}
+  .path{grid-template-columns:1fr 1fr}
+  .path::before{display:none}
+  footer .f-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  #navToggle{display:block}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .mod-grid,.three-grid,.term-grid,.elem-grid,.types-grid,.trait-grid,.guard-grid,.split-2,.ai-grid,.risk-grid,.quiz-grid,.asg-grid,.frow.c2,.etiq-grid,.img-grid{grid-template-columns:1fr}
+  .wk-body{padding:26px 20px}
+  .paper-letter{padding:28px 20px}
+  section{padding:60px 0}
+  #hero{padding-top:120px}
+  .flow-4{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<input type="checkbox" id="navCheck" class="ctl">
+<div id="progressBar"></div>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#hero">
+      <span class="seal">書</span>
+      <span><b>書信 × 邀請函 × AI</b><small>互動學習平台｜11/18 大一國文</small></span>
+    </a>
+    <nav><ul class="nav-links" id="navLinks">
+      <li><a href="#overview">課程總覽</a></li>
+      <li><a href="#basics">書信基礎</a></li>
+      <li><a href="#structure">結構與術語</a></li>
+      <li><a href="#ai-invite">邀請函×AI</a></li>
+      <li><a href="#workshop">實戰工作坊</a></li>
+      <li><a href="#assignment">作業</a></li>
+    </ul></nav>
+    <label id="navToggle" for="navCheck">☰</label>
+  </div>
+</header>
+<div id="mobileMenu">
+  <a href="#overview">① 課程總覽</a><a href="#basics">② 書信與應用文基礎</a>
+  <a href="#structure">③ 結構與常見術語</a><a href="#ai-invite">④ AI 時代的邀請函</a>
+  <a href="#workshop">⑤ 實戰工作坊</a><a href="#assignment">⑥ 作業說明</a>
+</div>
+
+<section id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-chip">✦ 大一國文・11/18 課程講義整合版</span>
+      <h1>書信、邀請函<br>與 <em>AI 應用</em></h1>
+      <p class="hero-sub">—— 從傳統書信禮儀，到生成式 AI 寫作的完整旅程 ——</p>
+      <p class="hero-desc">本頁面完整整合《書信與 AI 邀請函課程總覽（學習指引）》與《邀請函寫作與 AI 輔助工作坊》兩份教材：傳統書信與應用文基礎、書信結構與常見術語、AI 時代的邀請函寫作，以及六步驟實戰工作坊，並支援將工作坊成果（含 AI 生成圖檔）匯出為 Word 檔，上傳至課業輔導系統作業區。</p>
+      <div class="hero-btns">
+        <a class="btn btn-verm" href="#basics">開始學習 →</a>
+        <a class="btn btn-teal" href="#workshop">直接進入工作坊 ✍</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>21</b><span>應用文種類</span></div>
+        <div class="stat"><b>13</b><span>箋文結構項目</span></div>
+        <div class="stat"><b>6</b><span>邀請函結構</span></div>
+        <div class="stat"><b>4</b><span>AI 寫作步驟</span></div>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="hero-frame">
+        <svg viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="書信與AI插畫">
+          <defs>
+            <linearGradient id="gPaper" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fbf7ec"/><stop offset="1" stop-color="#f0e6cf"/>
+            </linearGradient>
+            <linearGradient id="gStream" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#16635f" stop-opacity=".15"/><stop offset=".5" stop-color="#16635f" stop-opacity=".65"/><stop offset="1" stop-color="#b8402f" stop-opacity=".7"/>
+            </linearGradient>
+          </defs>
+          <rect width="460" height="380" fill="url(#gPaper)"/>
+          <path d="M-20 320 Q 120 240 240 300 T 500 280" stroke="#2c2620" stroke-opacity=".12" stroke-width="26" fill="none" stroke-linecap="round"/>
+          <path d="M30 90 Q 90 40 170 70" stroke="#2c2620" stroke-opacity=".1" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <g transform="rotate(-4 180 210)">
+            <rect x="70" y="140" width="230" height="150" rx="10" fill="#fffdf4" stroke="#d8c9a5" stroke-width="2"/>
+            <path d="M70 152 L185 232 L300 152" fill="none" stroke="#d8c9a5" stroke-width="2"/>
+            <circle cx="185" cy="230" r="17" fill="#b8402f"/>
+            <text x="185" y="236" text-anchor="middle" fill="#fff" font-size="15" font-family="serif" font-weight="bold">邀</text>
+            <rect x="252" y="152" width="30" height="24" fill="none" stroke="#b98a2f" stroke-width="1.5" stroke-dasharray="3 2"/>
+          </g>
+          <g transform="rotate(35 330 140)">
+            <rect x="322" y="60" width="14" height="120" rx="7" fill="#7a4a2b"/>
+            <path d="M322 180 L336 180 L329 212 Z" fill="#2c2620"/>
+          </g>
+          <path d="M40 60 C 140 20, 260 30, 420 90" stroke="url(#gStream)" stroke-width="3" fill="none" stroke-dasharray="1 7" stroke-linecap="round"/>
+          <path d="M20 340 C 160 300, 300 350, 440 300" stroke="url(#gStream)" stroke-width="2.5" fill="none" stroke-dasharray="1 6" stroke-linecap="round"/>
+          <g fill="#16635f">
+            <circle cx="120" cy="42" r="3.5" opacity=".7"/><circle cx="230" cy="34" r="2.5" opacity=".55"/>
+            <circle cx="340" cy="62" r="4" opacity=".8"/><circle cx="90" cy="322" r="3" opacity=".6"/>
+            <circle cx="280" cy="330" r="2.5" opacity=".5"/><circle cx="410" cy="305" r="3.5" opacity=".75"/>
+          </g>
+          <g fill="#b8402f">
+            <circle cx="392" cy="78" r="2.5" opacity=".8"/><circle cx="60" cy="330" r="2.5" opacity=".7"/>
+          </g>
+          <g transform="rotate(3 385 200)">
+            <rect x="345" y="120" width="86" height="160" rx="6" fill="#fffdf4" stroke="#d8c9a5" stroke-width="1.5"/>
+            <line x1="368" y1="135" x2="368" y2="262" stroke="#e5dac2" stroke-width="1.5"/>
+            <line x1="388" y1="135" x2="388" y2="262" stroke="#e5dac2" stroke-width="1.5"/>
+            <line x1="408" y1="135" x2="408" y2="262" stroke="#e5dac2" stroke-width="1.5"/>
+            <g fill="#2c2620" opacity=".65" font-size="11" font-family="serif">
+              <text x="404" y="150">敬</text><text x="404" y="166">啟</text><text x="404" y="182">者</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="mini-seal">以文會友</div>
+    </div>
+  </div>
+</section>
+
+<section id="overview">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-badge">覽</span>
+      <div><h2>11/18 課程總覽：書信、邀請函與 AI 應用</h2><p>整合 11/18 課程講義與 AI 寫作補充內容，分為三大學習模組：傳統書信與應用文基礎、結構與常見術語、AI 時代的邀請函寫作。</p></div>
+    </div>
+    <div class="mod-grid">
+      <div class="card mod-card"><span class="no">01</span>
+        <h3>傳統書信與應用文基礎</h3>
+        <p>先理解「為什麼這樣寫」，再談「怎麼寫」。</p>
+        <ul><li>書信的意義、種類與寫作原則</li><li>應用文的定義、特質與 21 類</li><li>應用文寫作六原則</li></ul>
+      </div>
+      <div class="card mod-card"><span class="no">02</span>
+        <h3>書信結構與常見術語</h3>
+        <p>格式是書信的骨架，術語是書信的禮數。</p>
+        <ul><li>封文（信封）：直式與橫式寫法</li><li>箋文（信紙）：前中後三段 13 項</li><li>稱謂、提稱語、問候語速查</li></ul>
+      </div>
+      <div class="card mod-card"><span class="no">03</span>
+        <h3>AI 時代的邀請函寫作</h3>
+        <p>AI 輔助創作，但人來掌握品質。</p>
+        <ul><li>邀請函定義、結構與關鍵元素</li><li>生成式 AI 的四大應用情境</li><li>風險警示與人機分工四步驟</li></ul>
+      </div>
+    </div>
+
+    <h3 class="sub-title tl">如何使用本頁面？四步學習路徑</h3>
+    <div class="card path">
+      <div class="path-step"><div class="pn">壹</div><h4>閱讀知識</h4><p>研讀書信基礎、結構與術語三大章節</p></div>
+      <div class="path-step"><div class="pn">貳</div><h4>演練測驗</h4><p>利用互動信封、術語速查與小測驗自我檢核</p></div>
+      <div class="path-step"><div class="pn">參</div><h4>AI 實作</h4><p>進入六步驟工作坊，體驗模擬 AI 生成與修潤</p></div>
+      <div class="path-step"><div class="pn">肆</div><h4>匯出上傳</h4><p>將工作坊成果（含圖檔）匯出為 Word 檔，上傳至課業輔導系統作業區</p></div>
+    </div>
+
+    <div class="obj-row">
+      <div class="obj-item"><b>目標①</b><span>掌握傳統書信的格式、稱謂與禮儀用語，避免失禮錯誤。</span></div>
+      <div class="obj-item"><b>目標②</b><span>熟記邀請函六大結構，能清楚呈現時間、地點與 RSVP 資訊。</span></div>
+      <div class="obj-item"><b>目標③</b><span>學會以 STAR 原則撰寫提示語，運用 AI 提升寫作效率並進行人工審核。</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="basics">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-badge gold">基</span>
+      <div><h2>傳統書信與應用文基礎</h2><p>書信的意義、種類與原則；應用文的定義、特質、21 個常見種類與寫作原則。</p></div>
+    </div>
+
+    <h3 class="sub-title">一、書信的意義（三大特性）</h3>
+    <div class="three-grid">
+      <div class="card prin-card"><div class="pi">👤</div><h4>有一定的對象</h4><p>必須注意禮節，尊重對方的地位。</p></div>
+      <div class="card prin-card"><div class="pi">📌</div><h4>有一定的範圍</h4><p>以實際問題為內容，文字必須力求簡明扼要。</p></div>
+      <div class="card prin-card"><div class="pi">📐</div><h4>有一定的格式</h4><p>有專門的用語，必須依照一般的習慣。</p></div>
+    </div>
+
+    <h3 class="sub-title tl">二、書信的種類</h3>
+    <div class="split-2">
+      <div class="card cls-card">
+        <h4>依「人」而分 <span class="tag tag-red">對象關係</span></h4>
+        <div class="cls-row"><b>上行</b><span>寫給長輩／上司 —— 語氣最恭敬，敬語最多。</span></div>
+        <div class="cls-row"><b>平行</b><span>寫給平輩／朋友 —— 禮貌而自然，可較親切。</span></div>
+        <div class="cls-row"><b>下行</b><span>寫給晚輩／學生 —— 懇切叮嚀，不必過度謙敬。</span></div>
+      </div>
+      <div class="card cls-card">
+        <h4>依「事」而分 <span class="tag tag-teal">內容性質</span></h4>
+        <div class="cls-row"><b>應酬</b><span>慶賀、弔唁等人情往來。</span></div>
+        <div class="cls-row"><b>應用</b><span>請託、推薦等事務處理。</span></div>
+        <div class="cls-row"><b>議論</b><span>論學、勤勉等觀點交流。</span></div>
+        <div class="cls-row"><b>聯絡</b><span>問候、通知等日常聯繫。</span></div>
+      </div>
+    </div>
+
+    <div class="q2-banner">
+      <h4>三、書信的寫作原則 —— 必須弄清楚兩個問題</h4>
+      <div class="qs"><div class="q">「對象是誰？」</div><div class="q">「談些什麼？」</div></div>
+      <p>並依親疏遠近、內容需要，使用適當的詞語，力求語氣懇切、行文簡要。這也是後續使用 AI 時，提示詞中必須交代清楚的兩件事。</p>
+    </div>
+
+    <h3 class="sub-title gl">四、應用文的定義與特質</h3>
+    <div class="card" style="padding:24px 26px">
+      <p style="font-size:14.5px"><b style="color:var(--verm-dark)">應用文的定義：</b>針對特定事件、特定目的而寫作，具有特定格式的文章，包括「個人與個人」、「機關團體與機關團體」、「個人與機關團體」之間的文書往來。</p>
+    </div>
+    <div class="trait-grid">
+      <div class="card trait"><b>內 容</b><p>多取材於日常生活，因應某一事件需要而寫作。</p></div>
+      <div class="card trait"><b>對 象</b><p>特定的一人或團體，有一定時效性。</p></div>
+      <div class="card trait"><b>格 式</b><p>寫作格式為約定俗成，必須遵守。</p></div>
+      <div class="card trait"><b>術 語</b><p>有專門的術語，需謹慎使用。</p></div>
+    </div>
+
+    <h3 class="sub-title">五、應用文的常見種類（21 類）</h3>
+    <input type="radio" name="tfilter" id="tfAll" class="ctl" checked>
+    <input type="radio" name="tfilter" id="tfSocial" class="ctl">
+    <input type="radio" name="tfilter" id="tfDoc" class="ctl">
+    <input type="radio" name="tfilter" id="tfPub" class="ctl">
+    <input type="radio" name="tfilter" id="tfCert" class="ctl">
+    <div class="filter-bar">
+      <label class="fbtn" for="tfAll">全部（21）</label>
+      <label class="fbtn" for="tfSocial">交誼應酬類（8）</label>
+      <label class="fbtn" for="tfDoc">公文規章類（5）</label>
+      <label class="fbtn" for="tfPub">宣傳企畫類（5）</label>
+      <label class="fbtn" for="tfCert">憑證履歷類（3）</label>
+    </div>
+    <div class="types-grid" id="typesGrid">
+      <div class="type-card" data-cat="social" style="--cat-color:#b8402f"><h4>書信</h4><p>聯絡感情、洽辦事務</p><span class="cat">交誼應酬類</span></div>
+      <div class="type-card" data-cat="social" style="--cat-color:#b8402f"><h4>便條</h4><p>簡便字條</p><span class="cat">交誼應酬類</span></div>
+      <div class="type-card" data-cat="social" style="--cat-color:#b8402f"><h4>名片</h4><p>姓名簡介資料</p><span class="cat">交誼應酬類</span></div>
+      <div class="type-card" data-cat="social" style="--cat-color:#b8402f"><h4>柬帖</h4><p>婚喪喜慶、交際應酬</p><span class="cat">交誼應酬類</span></div>
+      <div class="type-card" data-cat="social" style="--cat-color:#b8402f"><h4>對聯</h4><p>對偶形式</p><span class="cat">交誼應酬類</span></div>
+      <div class="type-card" data-cat="social" style="--cat-color:#b8402f"><h4>題辭</h4><p>頌揚、祝福、哀悼</p><span class="cat">交誼應酬類</span></div>
+      <div class="type-card" data-cat="social" style="--cat-color:#b8402f"><h4>慶賀文</h4><p>慶賀喜事</p><span class="cat">交誼應酬類</span></div>
+      <div class="type-card" data-cat="social" style="--cat-color:#b8402f"><h4>祭弔文</h4><p>喪事弔唁</p><span class="cat">交誼應酬類</span></div>
+      <div class="type-card" data-cat="doc" style="--cat-color:#2f3a52"><h4>公文</h4><p>處理公務</p><span class="cat">公文規章類</span></div>
+      <div class="type-card" data-cat="doc" style="--cat-color:#2f3a52"><h4>會議文書</h4><p>通知、紀錄、簽到簿</p><span class="cat">公文規章類</span></div>
+      <div class="type-card" data-cat="doc" style="--cat-color:#2f3a52"><h4>規章</h4><p>規則、章程、條例</p><span class="cat">公文規章類</span></div>
+      <div class="type-card" data-cat="doc" style="--cat-color:#2f3a52"><h4>契約</h4><p>規定權利義務</p><span class="cat">公文規章類</span></div>
+      <div class="type-card" data-cat="doc" style="--cat-color:#2f3a52"><h4>存證信函</h4><p>郵局證明內容及日期</p><span class="cat">公文規章類</span></div>
+      <div class="type-card" data-cat="pub" style="--cat-color:#b98a2f"><h4>標語</h4><p>宣傳文字</p><span class="cat">宣傳企畫類</span></div>
+      <div class="type-card" data-cat="pub" style="--cat-color:#b98a2f"><h4>簡報</h4><p>介紹工作、設施、產品</p><span class="cat">宣傳企畫類</span></div>
+      <div class="type-card" data-cat="pub" style="--cat-color:#b98a2f"><h4>啟事</h4><p>向公眾說明或希望協辦</p><span class="cat">宣傳企畫類</span></div>
+      <div class="type-card" data-cat="pub" style="--cat-color:#b98a2f"><h4>廣告</h4><p>產品宣傳</p><span class="cat">宣傳企畫類</span></div>
+      <div class="type-card" data-cat="pub" style="--cat-color:#b98a2f"><h4>企畫書</h4><p>達成目標或效益的規劃文書</p><span class="cat">宣傳企畫類</span></div>
+      <div class="type-card" data-cat="cert" style="--cat-color:#16635f"><h4>書狀</h4><p>履行權利或義務的簽署文件</p><span class="cat">憑證履歷類</span></div>
+      <div class="type-card" data-cat="cert" style="--cat-color:#16635f"><h4>單據</h4><p>貨物交付和貨款支付依據</p><span class="cat">憑證履歷類</span></div>
+      <div class="type-card" data-cat="cert" style="--cat-color:#16635f"><h4>自傳履歷</h4><p>自述生平</p><span class="cat">憑證履歷類</span></div>
+    </div>
+
+    <h3 class="sub-title tl">六、應用文寫作原則</h3>
+    <div class="chips-row">
+      <span class="chip">✦ 符合時代潮流</span><span class="chip">✦ 具備各種知識</span><span class="chip">✦ 不逾越權限</span>
+      <span class="chip">✦ 內容切合實際</span><span class="chip">✦ 格式正確</span><span class="chip">✦ 文字簡淺明確</span>
+    </div>
+  </div>
+</section>
+
+<section id="structure">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-badge teal">構</span>
+      <div><h2>書信結構與常見術語</h2><p>封文（信封）直式與橫式結構、箋文（信紙）前中後三段 13 項結構（含各項範例），以及稱謂、提稱語、問候語等常見術語。點擊信封區塊與箋文項目即可查看說明。</p></div>
+    </div>
+
+    <h3 class="sub-title">（一）封文：信封的結構</h3>
+    <input type="radio" name="emode" id="emodeV" class="ctl" checked>
+    <input type="radio" name="emode" id="emodeH" class="ctl">
+    <input type="radio" name="ezv" id="ezvStamp" class="ctl" checked>
+    <input type="radio" name="ezv" id="ezvRight" class="ctl">
+    <input type="radio" name="ezv" id="ezvCenter" class="ctl">
+    <input type="radio" name="ezv" id="ezvLeft" class="ctl">
+    <input type="radio" name="ezh" id="ezhStamp" class="ctl" checked>
+    <input type="radio" name="ezh" id="ezhTop" class="ctl">
+    <input type="radio" name="ezh" id="ezhBottom" class="ctl">
+    <div class="env-toggle">
+      <label class="env-tbtn" for="emodeV">直式信封</label>
+      <label class="env-tbtn" for="emodeH">橫式信封</label>
+    </div>
+    <div class="env-layout">
+      <div>
+        <div class="envbox env-vert">
+          <label class="env-zone" for="ezvStamp" style="top:4%;left:4%;width:19%;height:17%"><span class="zl">郵票</span><span style="font-size:11px">📮 郵票區</span></label>
+          <label class="env-zone" for="ezvRight" style="top:5%;right:4%;bottom:5%;width:21%"><span class="zl">右邊</span><span class="vtext" style="font-size:12px">104 臺北市中山區○○路 88 號</span></label>
+          <label class="env-zone" for="ezvCenter" style="top:9%;left:27%;right:27%;bottom:9%"><span class="zl">中間</span><span class="vtext serif" style="font-size:clamp(17px,2.4vw,24px);font-weight:700;letter-spacing:8px">王小明 教授 道鑒</span></label>
+          <label class="env-zone" for="ezvLeft" style="top:26%;left:4%;bottom:5%;width:21%"><span class="zl">左邊</span><span class="vtext" style="font-size:11.5px">110 臺北市陳小華 緘</span></label>
+        </div>
+        <div class="envbox env-hor">
+          <label class="env-zone" for="ezhStamp" style="top:6%;right:4%;width:13%;height:20%"><span class="zl">郵票</span><span style="font-size:11px">📮</span></label>
+          <label class="env-zone" for="ezhTop" style="top:10%;left:6%;right:24%;height:24%"><span class="zl">上行・寄信人</span><span style="font-size:12.5px">110 臺北市信義區○○路 100 號｜白雲文化公司 陳小華 緘</span></label>
+          <label class="env-zone" for="ezhBottom" style="bottom:9%;left:6%;right:6%;height:36%"><span class="zl">下行・受信人</span><span class="serif" style="font-size:clamp(15px,2.2vw,21px);font-weight:700;letter-spacing:2px">104 臺北市中山區○○路 88 號　王小明 教授 道鑒</span></label>
+        </div>
+      </div>
+      <div>
+        <div class="env-info">
+          <div class="ei eiv-stamp"><h4>📮 郵票位置</h4><p>直式信封：郵票貼「左上角」。</p><div class="kw"><span class="tag tag-gold">郵票・左上角</span></div></div>
+          <div class="ei eiv-right"><h4>右邊｜受信人地址</h4><p>受信人的郵遞區號、地址。直式書寫由右而左閱讀，受信人資訊在右邊。</p><div class="kw"><span class="tag tag-gold">郵遞區號</span><span class="tag tag-gold">地址</span></div></div>
+          <div class="ei eiv-center"><h4>中間｜受信人</h4><p>受信人的姓名、稱謂、啟封詞，字體最大、最為醒目。例：「王小明 教授 道鑒」。注意：啟封詞絕不可用「恭啟」、「敬啟」。</p><div class="kw"><span class="tag tag-gold">姓名</span><span class="tag tag-gold">稱謂</span><span class="tag tag-gold">啟封詞</span></div></div>
+          <div class="ei eiv-left"><h4>左邊｜發信人</h4><p>發信人的地址、發信人的姓（或姓名）、緘封詞、郵遞區號。例：「陳小華 緘」。</p><div class="kw"><span class="tag tag-gold">發信人</span><span class="tag tag-gold">緘封詞</span></div></div>
+          <div class="ei eih-stamp"><h4>📮 郵票位置</h4><p>橫式信封：郵票貼「右上角」。</p><div class="kw"><span class="tag tag-gold">郵票・右上角</span></div></div>
+          <div class="ei eih-top"><h4>上行｜寄信人</h4><p>郵遞區號、地址、姓名或商號名稱、緘封詞。</p><div class="kw"><span class="tag tag-gold">郵遞區號</span><span class="tag tag-gold">地址</span><span class="tag tag-gold">緘封詞</span></div></div>
+          <div class="ei eih-bottom"><h4>下行｜受信人</h4><p>郵遞區號、地址、姓名、稱謂、啟封詞。字體較大，是信封焦點。</p><div class="kw"><span class="tag tag-gold">郵遞區號</span><span class="tag tag-gold">姓名</span><span class="tag tag-gold">稱謂</span><span class="tag tag-gold">啟封詞</span></div></div>
+        </div>
+        <div class="note warn" style="margin-top:16px"><span class="ic">⚠️</span><div><b>信封重點：</b>啟封詞、緘封詞。<b>【注意】絕對不可使用「恭啟」、「敬啟」</b>——這等於要求對方「恭敬地開啟」，反而失禮。宜用「大啟」、「鈞啟」、「台啟」、「道啟」等。</div></div>
+      </div>
+    </div>
+
+    <h3 class="sub-title tl">（二）箋文：信紙的結構（前中後三段，共 13 項・含範例）</h3>
+    <div class="seg-grid">
+      <div class="seg-col s1"><header><h4>前 段</h4><span>確定關係、請求察閱</span></header>
+        <details class="lp-item" open><summary>1. 稱謂<span class="arr">▶</span></summary><div class="lp-body-in">發信者與受信者的關係，須依對象身分選用。
+          <em><b>師長：</b>「林教授」、「張老師」</em>
+          <em><b>長輩／上司：</b>「王董事長」、「陳局長」</em>
+          <em><b>平輩：</b>「小明兄」、「王小姐」</em>
+          <em><b>家人：</b>「父母親大人」、「祖父大人」</em>
+        </div></details>
+        <details class="lp-item"><summary>2. 提稱語<span class="arr">▶</span></summary><div class="lp-body-in">請求受信者察閱，須與對象身分相配。
+          <em><b>祖父母／父母：</b>膝下、膝前</em>
+          <em><b>師長：</b>函丈、壇席、講座、道鑒</em>
+          <em><b>長輩：</b>尊前、尊鑒、賜鑒、鈞鑒</em>
+          <em><b>平輩：</b>臺鑒、大鑒、惠鑒、左右、足下</em>
+          <em><b>晚輩：</b>青鑒、青覽、如晤、收覽</em>
+        </div></details>
+        <details class="lp-item"><summary>3. 啟事敬辭<span class="arr">▶</span></summary><div class="lp-body-in">陳述發語詞，現代多省略；正式或公務信函仍常見。
+          <em>例：「敬啟者：」「逕啟者：」</em>
+          <em>寫法：接於提稱語之後，另起一行；一般書信亦可省略，直接寫開頭應酬語或正文。</em>
+        </div></details>
+      </div>
+      <div class="seg-col s2"><header><h4>中 段</h4><span>核心內容</span></header>
+        <details class="lp-item" open><summary>4. 開頭應酬語<span class="arr">▶</span></summary><div class="lp-body-in">關懷問候，現代有時可省略；隨對象調整。
+          <em><b>師長：</b>「久未請益，敬維 道體康泰、著述宏豐。」</em>
+          <em><b>長輩：</b>「光陰荏苒，敬維 起居萬福。」</em>
+          <em><b>平輩：</b>「好久不見，近來可好？」</em>
+        </div></details>
+        <details class="lp-item"><summary>5. 正文<span class="arr">▶</span></summary><div class="lp-body-in">書信主體內容，力求語氣懇切、條理清楚：說明事由、細節與請求。
+          <em>例：「本院訂於十二月十日下午二時，假人文館 301 會議室舉行『AI 寫作應用工作坊』，懇請 撥冗蒞臨，惠賜指導。」</em>
+        </div></details>
+      </div>
+      <div class="seg-col s3"><header><h4>後 段</h4><span>禮貌、署名、日期</span></header>
+        <details class="lp-item"><summary>6. 結尾應酬語・7. 結尾敬辭・8. 自稱署名末啟詞</summary><div class="lp-body-in">
+          <em><b>結尾應酬語：</b>「肅此」、「專此」（可省略）</em>
+          <em><b>結尾敬辭（師長）：</b>「敬請 道安」、「恭請 誨安」；（平輩）：「順頌 時祺」</em>
+          <em><b>署名（對師長）：</b>「學生 陳小華 敬上」；（對平輩）：「弟 陳小華 敬啟」</em>
+        </div></details>
+        <details class="lp-item"><summary>9. 寫信時間・10. 並候語</summary><div class="lp-body-in">
+          <em><b>寫信時間：</b>「十一月十八日」</em>
+          <em><b>並候語：</b>「並請 代候 令尊大人」（請代為問候他人）</em>
+        </div></details>
+        <details class="lp-item"><summary>11. 附件語・12. 附候語・13. 補述語</summary><div class="lp-body-in">補充、問候親友與附加說明。
+          <em><b>附件語：</b>「隨函檢附 議程乙份，敬祈 察照」</em>
+          <em><b>附候語：</b>「並候 近安」</em>
+          <em><b>補述語：</b>「另，當日備有茶點，屆時請 撥冗出席。」</em>
+        </div></details>
+      </div>
+    </div>
+
+    <h3 class="sub-title">（二之補）箋文完整範例：13 項標註對照</h3>
+    <p style="color:var(--ink-soft);font-size:14px;margin-top:-8px">以下是一封寫給師長的邀請信函，逐項標註箋文 13 個結構項目，可作為寫作範本。</p>
+    <div class="letter-sample-wrap">
+      <div class="paper-letter">敬愛的 林教授<sup>1</sup> 道鑒<sup>2</sup>：
+
+敬啟者<sup>3</sup>：
+
+久未請益，敬維 道體康泰、著述宏豐，無任欣頌。<sup>4</sup>
+
+本院訂於十二月十日（週三）下午二時，假人文館 301 會議室舉行「AI 寫作應用工作坊」，探討生成式人工智慧於書信與應用文寫作之輔助應用。素仰 教授於應用文教學研究造詣精深，懇請 撥冗蒞臨，擔任與談貴賓，惠賜指導。<sup>5</sup>
+
+肅此<sup>6</sup>，敬請
+道安<sup>7</sup>
+
+<div class="sign">學生 陳小華 敬上<sup>8</sup>
+十一月十八日<sup>9</sup></div>
+<div class="ann">並請 代候 師母安好<sup>10</sup>
+隨函檢附 議程乙份，敬祈 察照<sup>11</sup>
+並候 近安<sup>12</sup>
+另，當日備有茶點，屆時請 撥冗出席<sup>13</sup></div></div>
+      <div class="legend">
+        <h4>🔎 箋文 13 項標註對照</h4>
+        <div class="legend-item"><span class="mn">1</span><div><b>稱謂</b>——依對象身分選用</div></div>
+        <div class="legend-item"><span class="mn">2</span><div><b>提稱語</b>——對師長用「道鑒」</div></div>
+        <div class="legend-item"><span class="mn">3</span><div><b>啟事敬辭</b>——「敬啟者」（可省略）</div></div>
+        <div class="legend-item"><span class="mn">4</span><div><b>開頭應酬語</b>——問候與敬意</div></div>
+        <div class="legend-item"><span class="mn">5</span><div><b>正文</b>——事由＋細節＋請求</div></div>
+        <div class="legend-item"><span class="mn">6</span><div><b>結尾應酬語</b>——「肅此」（可省略）</div></div>
+        <div class="legend-item"><span class="mn">7</span><div><b>結尾敬辭</b>——對師長用「道安」</div></div>
+        <div class="legend-item"><span class="mn">8</span><div><b>自稱・署名・末啟詞</b>——「學生⋯敬上」</div></div>
+        <div class="legend-item"><span class="mn">9</span><div><b>寫信時間</b></div></div>
+        <div class="legend-item"><span class="mn">10</span><div><b>並候語</b>——代候他人</div></div>
+        <div class="legend-item"><span class="mn">11</span><div><b>附件語</b>——隨函檢附</div></div>
+        <div class="legend-item"><span class="mn">12</span><div><b>附候語</b>——附帶問候</div></div>
+        <div class="legend-item"><span class="mn">13</span><div><b>補述語</b>——補充說明</div></div>
+        <div class="note gold" style="margin-top:14px"><span class="ic">💡</span><div style="font-size:12.5px">啟事敬辭、結尾應酬語、並候語、附候語、補述語可依需要省略，但稱謂、提稱語、正文、結尾敬辭與署名日期為必要項目。</div></div>
+      </div>
+    </div>
+
+    <h3 class="sub-title gl">（三）書信常見術語（稱謂、提稱語、問候語）</h3>
+    <input type="radio" name="ttab" id="tt1" class="ctl" checked>
+    <input type="radio" name="ttab" id="tt2" class="ctl">
+    <input type="radio" name="ttab" id="tt3" class="ctl">
+    <div class="ttabs">
+      <label class="ttab" for="tt1">① 親人稱謂簡表</label>
+      <label class="ttab" for="tt2">② 提稱語（請求閱讀）</label>
+      <label class="ttab" for="tt3">③ 問候語（結尾敬語）</label>
+    </div>
+    <div class="tpanel" id="p1">
+      <div class="t-table-wrap">
+        <table class="t-table">
+          <thead><tr><th>對象</th><th>稱人</th><th>自稱</th><th>對他人稱</th><th>對他人自稱</th></tr></thead>
+          <tbody>
+            <tr><td>祖父（母）</td><td>—</td><td>孫／孫女</td><td>令祖／祖母</td><td>家祖父／母（家大父／母）</td></tr>
+            <tr><td>父（母）親</td><td>—</td><td>男／女（兒）</td><td>令尊／堂（尊公／堂）</td><td>家父／母（家嚴／慈）</td></tr>
+            <tr><td>兄嫂</td><td>某哥／姊</td><td>弟／妹</td><td>令兄／嫂</td><td>家兄／嫂</td></tr>
+            <tr><td>吾夫</td><td>—</td><td>妻／某某</td><td>尊夫／令夫君</td><td>外子（某某）</td></tr>
+            <tr><td>吾妻</td><td>—</td><td>夫／某某</td><td>尊／嫂夫人</td><td>內子／人</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink-faint);margin-top:10px">💡 口訣：「家大舍小令外人」——稱自己家人用「家／舍」，稱對方家人用「令／尊」。</p>
+    </div>
+    <div class="tpanel" id="p2">
+      <div class="term-grid">
+        <div class="term-card"><h5>祖父母及父母</h5><div class="term-chips"><span>膝下</span><span>膝前</span></div></div>
+        <div class="term-card"><h5>長輩</h5><div class="term-chips"><span>尊前</span><span>尊鑒</span><span>賜鑒</span><span>鈞鑒</span></div></div>
+        <div class="term-card"><h5>師長</h5><div class="term-chips"><span>函丈</span><span>壇席</span><span>講座</span><span>尊鑒</span></div></div>
+        <div class="term-card"><h5>平輩</h5><div class="term-chips"><span>臺鑒</span><span>大鑒</span><span>惠鑒</span><span>左右</span><span>足下</span></div></div>
+        <div class="term-card"><h5>晚輩</h5><div class="term-chips"><span>青鑒</span><span>青覽</span><span>如晤</span><span>收覽</span></div></div>
+        <div class="term-card"><h5>政界／軍界</h5><div class="term-chips"><span>勛鑒</span><span>鈞鑒</span><span>鈞座</span><span>麾下</span></div></div>
+      </div>
+    </div>
+    <div class="tpanel" id="p3">
+      <div class="term-grid">
+        <div class="term-card"><h5>祖父母及父母</h5><div class="term-chips"><span>敬請 福安</span><span>敬請 金安</span></div></div>
+        <div class="term-card"><h5>親友長輩</h5><div class="term-chips"><span>恭請 崇安</span><span>敬頌 福祉</span></div></div>
+        <div class="term-card"><h5>師長</h5><div class="term-chips"><span>恭請 誨安</span><span>敬請 道安</span></div></div>
+        <div class="term-card"><h5>政界</h5><div class="term-chips"><span>敬請 勛安</span><span>恭請 鈞安</span></div></div>
+        <div class="term-card"><h5>商界</h5><div class="term-chips"><span>敬請 籌安</span><span>順候 財安</span></div></div>
+        <div class="term-card"><h5>問疾</h5><div class="term-chips"><span>恭請 痊安</span><span>順祝 早痊</span></div></div>
+        <div class="term-card"><h5>平輩（補充）</h5><div class="term-chips"><span>順頌 時祺</span><span>敬候 近安</span></div></div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">（四）禮節快查器（點擊卡片展開）</h3>
+    <div class="etiq-grid">
+      <details class="etiq-card"><summary>祖父母、父母</summary><div class="ec-body"><p><b>提稱語：</b>膝下、膝前</p><p><b>問候語：</b>敬請 福安／金安</p><p><b>自稱：</b>孫、孫女／男、女</p><p><b>末啟詞：</b>敬稟</p><div class="ec-note">💡 稱謂後直接接「膝下」，如「祖父大人膝下」，是最恭敬的寫法。</div></div></details>
+      <details class="etiq-card"><summary>親友長輩</summary><div class="ec-body"><p><b>提稱語：</b>尊前、尊鑒、賜鑒、鈞鑒</p><p><b>問候語：</b>恭請 崇安／敬頌 福祉</p><p><b>自稱：</b>晚、後學、世晚</p><p><b>末啟詞：</b>敬上、拜上</p><div class="ec-note">💡 對非直系長輩，「晚」字自稱最常見。</div></div></details>
+      <details class="etiq-card" open><summary>師長</summary><div class="ec-body"><p><b>提稱語：</b>函丈、壇席、講座、尊鑒</p><p><b>問候語：</b>恭請 誨安／敬請 道安</p><p><b>自稱：</b>受業、學生</p><p><b>末啟詞：</b>敬上</p><div class="ec-note">💡 「函丈」意為弟子與師長之間容一丈之地，極表尊敬。</div></div></details>
+      <details class="etiq-card"><summary>平輩</summary><div class="ec-body"><p><b>提稱語：</b>臺鑒、大鑒、惠鑒、左右、足下</p><p><b>問候語：</b>順頌 時祺／敬候 近安</p><p><b>自稱：</b>弟、愚、小弟</p><p><b>末啟詞：</b>敬啟、謹啟、手啟</p><div class="ec-note">💡 「左右」、「足下」不直呼其人，表示不敢當面直稱。</div></div></details>
+      <details class="etiq-card"><summary>晚輩</summary><div class="ec-body"><p><b>提稱語：</b>青鑒、青覽、如晤、收覽</p><p><b>問候語：</b>順問 近佳／即問 刻好</p><p><b>自稱：</b>兄、姊</p><p><b>末啟詞：</b>字、示、手白</p><div class="ec-note">💡 「如晤」如同見面，語氣親切。</div></div></details>
+      <details class="etiq-card"><summary>政界、軍界</summary><div class="ec-body"><p><b>提稱語：</b>勛鑒、鈞鑒、鈞座、麾下</p><p><b>問候語：</b>敬請 勛安／恭請 鈞安</p><p><b>自稱：</b>晚、職</p><p><b>末啟詞：</b>敬上</p><div class="ec-note">💡 對長官可用「鈞座」，對部屬可用「麾下」。</div></div></details>
+      <details class="etiq-card"><summary>商界</summary><div class="ec-body"><p><b>提稱語：</b>臺鑒、大鑒、惠鑒</p><p><b>問候語：</b>敬請 籌安／順候 財安</p><p><b>自稱：</b>弟、小弟</p><p><b>末啟詞：</b>敬啟、謹啟</p><div class="ec-note">💡 「籌安」祝福經營籌劃順利，為商界專用。</div></div></details>
+      <details class="etiq-card"><summary>探病慰問</summary><div class="ec-body"><p><b>提稱語：</b>臺鑒、惠鑒</p><p><b>問候語：</b>恭請 痊安／順祝 早痊</p><p><b>自稱：</b>依對象而定</p><p><b>末啟詞：</b>依對象而定</p><div class="ec-note">💡 慰問信語氣宜溫暖克制，避免過度鋪陳。</div></div></details>
+    </div>
+
+    <h3 class="sub-title">（五）隨堂小測驗（點選選項即刻判定）</h3>
+    <p style="color:var(--ink-soft);font-size:14px;margin-top:-8px">點選任一選項後，會標示正確答案並顯示解析。</p>
+    <div class="quiz-grid">
+      <div class="card quiz-card">
+        <h4><span class="qn">1</span>信封上的「啟封詞」可以使用「敬啟」嗎？</h4>
+        <input type="radio" name="qz1" id="q1a" class="ctl qradio"><input type="radio" name="qz1" id="q1b" class="ctl qradio"><input type="radio" name="qz1" id="q1c" class="ctl qradio"><input type="radio" name="qz1" id="q1d" class="ctl qradio">
+        <div class="qopts">
+          <label class="qopt" for="q1a">可以，表示尊敬</label>
+          <label class="qopt right" for="q1b">不可以，絕對不可使用「恭啟」、「敬啟」</label>
+          <label class="qopt" for="q1c">只能用於長輩</label>
+          <label class="qopt" for="q1d">只能用於公文</label>
+        </div>
+        <div class="qexp">✅ 正確答案：不可以。講義明言：信封絕對不可使用「恭啟」、「敬啟」。宜用「大啟」、「鈞啟」、「台啟」、「道啟」等。</div>
+      </div>
+      <div class="card quiz-card">
+        <h4><span class="qn">2</span>寫信給師長，提稱語宜用？</h4>
+        <input type="radio" name="qz2" id="q2a" class="ctl qradio"><input type="radio" name="qz2" id="q2b" class="ctl qradio"><input type="radio" name="qz2" id="q2c" class="ctl qradio"><input type="radio" name="qz2" id="q2d" class="ctl qradio">
+        <div class="qopts">
+          <label class="qopt" for="q2a">膝下</label>
+          <label class="qopt" for="q2b">青鑒</label>
+          <label class="qopt right" for="q2c">函丈、壇席、講座</label>
+          <label class="qopt" for="q2d">左右</label>
+        </div>
+        <div class="qexp">✅ 正確答案：函丈、壇席、講座。「膝下」用於祖父母、父母；「青鑒」用於晚輩；「左右」用於平輩。</div>
+      </div>
+      <div class="card quiz-card">
+        <h4><span class="qn">3</span>邀請函正文中，哪一項是「必須要素」？</h4>
+        <input type="radio" name="qz3" id="q3a" class="ctl qradio"><input type="radio" name="qz3" id="q3b" class="ctl qradio"><input type="radio" name="qz3" id="q3c" class="ctl qradio"><input type="radio" name="qz3" id="q3d" class="ctl qradio">
+        <div class="qopts">
+          <label class="qopt" for="q3a">活動預算</label>
+          <label class="qopt" for="q3b">著裝規定</label>
+          <label class="qopt right" for="q3c">時間、地點</label>
+          <label class="qopt" for="q3d">媒體聯絡人</label>
+        </div>
+        <div class="qexp">✅ 正確答案：時間、地點。邀請函正文須含活動內容，其中「時間、地點」為必須要素。</div>
+      </div>
+      <div class="card quiz-card">
+        <h4><span class="qn">4</span>關於 AI 生成的邀請函，最正確的做法是？</h4>
+        <input type="radio" name="qz4" id="q4a" class="ctl qradio"><input type="radio" name="qz4" id="q4b" class="ctl qradio"><input type="radio" name="qz4" id="q4c" class="ctl qradio"><input type="radio" name="qz4" id="q4d" class="ctl qradio">
+        <div class="qopts">
+          <label class="qopt" for="q4a">直接寄出，AI 不會出錯</label>
+          <label class="qopt right" for="q4b">必須人工再次審核後再寄出</label>
+          <label class="qopt" for="q4c">只要加上表情符號即可</label>
+          <label class="qopt" for="q4d">完全不用檢查格式</label>
+        </div>
+        <div class="qexp">✅ 正確答案：必須人工再次審核。【第一防線】最終人工作業與校對：特別檢查受邀人姓名、時間地點與傳統敬語格式。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai-invite">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-badge navy">AI</span>
+      <div><h2>AI 時代的邀請函寫作</h2><p>邀請函的定義與結構、何時適合用生成式 AI、優秀邀請函的關鍵元素、AI 的具體應用與創意設計、潛在風險與注意事項，以及實戰四步驟。</p></div>
+    </div>
+
+    <h3 class="sub-title">七、邀請函的定義與結構</h3>
+    <div class="card" style="padding:24px 26px">
+      <p style="font-size:14.5px"><b style="color:var(--verm-dark)">定義：</b>邀請函是邀請知名人士、專家等參加某項活動時所發的請約性書信。它可以是「喜帖」、「請柬」或「事務信函」，但都依託於書信的形式而存在。</p>
+    </div>
+    <div class="flow-4">
+      <div class="flow-step"><div class="fc">🏷️</div><h4>標題</h4><p>明確指出主題</p></div>
+      <div class="flow-step"><div class="fc">🙇</div><h4>稱謂</h4><p>對受邀人的尊稱</p></div>
+      <div class="flow-step"><div class="fc">📜</div><h4>正文</h4><p>活動內容＋<b>時間、地點</b>（必須要素）</p></div>
+      <div class="flow-step"><div class="fc">✍️</div><h4>落款</h4><p>邀請人／單位名稱、寄信時間</p></div>
+    </div>
+    <div class="note tip" style="margin-top:22px"><span class="ic">💡</span><div><b>範例結構：</b>稱謂（如：教授道鑒）→ 開頭應酬語（如：光陰荏苒⋯）→ 邀請的正文（內容、時間、地點）→ 邀請人／單位、寄信時間（落款）。</div></div>
+
+    <h3 class="sub-title tl">【AI 應用】何時適合用生成式 AI（如 ChatGPT）？</h3>
+    <div class="trait-grid">
+      <div class="card trait"><b>🧩 資訊雜亂</b><p>活動訊息很雜亂，卻又沒有時間梳理。</p></div>
+      <div class="card trait"><b>🤔 毫無頭緒</b><p>對活動毫無頭緒，不知該如何下手。</p></div>
+      <div class="card trait"><b>📏 格式負擔</b><p>不想記一大堆傳統格式跟用語。</p></div>
+      <div class="card trait"><b>✨ 追求創意</b><p>想要表現出不同的創意。</p></div>
+    </div>
+    <div class="note gold" style="margin-top:16px"><span class="ic">📝</span><div><b>總結：</b>適用於需要快速梳理資訊、生成創意文案或擺脫傳統格式限制的場景。</div></div>
+
+    <h3 class="sub-title gl">【AI 應用】優秀邀請函須包含的關鍵元素</h3>
+    <p style="color:var(--ink-soft);font-size:14px;margin-top:-8px">一封優秀的邀請函應該清晰、吸引人且富有親和力，包含以下關鍵元素：</p>
+    <div class="elem-grid" style="margin-top:14px">
+      <div class="elem"><span class="en">1</span><div><b>受邀人姓名與稱謂</b><p>精確尊稱，體現尊重</p></div></div>
+      <div class="elem"><span class="en">2</span><div><b>活動名稱與目的</b><p>清晰傳達活動的價值</p></div></div>
+      <div class="elem"><span class="en">3</span><div><b>日期、時間、地點</b><p>明確的活動資訊</p></div></div>
+      <div class="elem"><span class="en">4</span><div><b>活動亮點與議程</b><p>吸引人的內容</p></div></div>
+      <div class="elem"><span class="en">5</span><div><b>主辦方資訊</b><p>專業性與信譽</p></div></div>
+      <div class="elem"><span class="en">6</span><div><b>回覆確認（RSVP）方式與期限</b><p>明確的參與方式</p></div></div>
+      <div class="elem"><span class="en">7</span><div><b>個性化的開場與結尾</b><p>展現對受邀人的重視</p></div></div>
+      <div class="elem" style="border:1.5px dashed var(--gold);background:var(--gold-soft)"><span class="en">★</span><div><b>清晰・吸引人・富有親和力</b><p>七項齊備，缺一不可。</p></div></div>
+    </div>
+
+    <h3 class="sub-title">【AI 應用】AI 在邀請函框架中的具體應用</h3>
+    <p style="color:var(--ink-soft);font-size:14px;margin-top:-8px">生成式 AI 可協助完成邀請函的各個環節，確保內容的專業度與吸引力：</p>
+    <div class="ai-grid" style="margin-top:14px">
+      <div class="card ai-card">
+        <h4><span class="aic">🗂️</span>內容生成與梳理</h4>
+        <p>將活動大綱或零散資訊輸入 AI，快速產出結構完整、條理清晰的正文內容。</p>
+        <div class="prompt-box" id="pr1">我這裡有一份關於「新產品發布會」的零散資訊，包括時間【10/25 上午10點】、主題【AI 驅動的寫作助理】、地點【線上會議室】。請將這些內容組合成一段具備吸引力且條理清晰的邀請函正文。<button class="copy-btn" data-copy="pr1" type="button">複製</button></div>
+      </div>
+      <div class="card ai-card c2">
+        <h4><span class="aic">🎚️</span>風格與語氣調整</h4>
+        <p>根據受邀對象（如長輩、平輩、商務夥伴）調整信件的語氣，從正式、傳統到活潑、創意均可一鍵切換。</p>
+        <div class="prompt-box" id="pr2">請將這段商務邀請函內容的語氣，調整成對「長期合作夥伴」的「溫馨且感激」的語氣，並使用「鈞鑒」作為提稱語。<button class="copy-btn" data-copy="pr2" type="button">複製</button></div>
+      </div>
+      <div class="card ai-card c3">
+        <h4><span class="aic">🔍</span>格式檢查與糾錯</h4>
+        <p>雖然 AI 仍需人為指導，但它能快速檢查基本的書信格式和禮儀用語，避免重大錯誤。</p>
+        <div class="prompt-box" id="pr3">請檢查以下邀請函的書信格式與禮儀用語：稱謂與提稱語是否匹配？結尾敬辭是否恰當？時間、地點是否清楚？（信件全文如下：⋯⋯）<button class="copy-btn" data-copy="pr3" type="button">複製</button></div>
+      </div>
+      <div class="card ai-card c4">
+        <h4><span class="aic">🌏</span>多語言版本轉換</h4>
+        <p>輕鬆將邀請函從中文轉換為英文或其他語言版本，方便國際交流。</p>
+        <div class="prompt-box" id="pr4">請將這封中文邀請函翻譯成英文，維持正式且溫暖的語氣，並完整保留活動時間、地點與 RSVP 回覆方式。<button class="copy-btn" data-copy="pr4" type="button">複製</button></div>
+      </div>
+    </div>
+
+    <h3 class="sub-title tl">【AI 應用】創意設計：撰寫個性化開場與結尾</h3>
+    <p style="color:var(--ink-soft);font-size:14px;margin-top:-8px">利用 AI 進行設計，使邀請函更具溫度和吸引力：</p>
+    <div class="three-grid" style="margin-top:14px">
+      <div class="card" style="padding:22px">
+        <span class="tag tag-red">破冰開場</span>
+        <h4 style="font-size:16px;margin:10px 0 6px">個性化開場語</h4>
+        <p style="font-size:13px;color:var(--ink-soft)">AI 可根據受邀人背景或與主辦方的關係，生成獨特的開場白，避免制式的「光陰荏苒」等語句，增進親切感。</p>
+        <div class="prompt-box" id="pr5">請為「王教授」設計一段開場白，提到他上次演講中關於「唐詩研究」的見解，並自然引導至本次「文化交流茶會」的邀請。<button class="copy-btn" data-copy="pr5" type="button">複製</button></div>
+      </div>
+      <div class="card" style="padding:22px">
+        <span class="tag tag-gold">氛圍營造</span>
+        <h4 style="font-size:16px;margin:10px 0 6px">活動氛圍營造</h4>
+        <p style="font-size:13px;color:var(--ink-soft)">透過 AI 描述，將活動的細節和期待的氛圍（如「溫馨且有質感的品酒之夜」）具體化，增加受邀人的參與慾望。</p>
+        <div class="prompt-box" id="pr6">請用充滿詩意的詞彙，描寫我們這次「新書發表會」的氛圍。主題是「在科技喧囂中尋覓片刻寧靜」，地點在老宅咖啡廳。<button class="copy-btn" data-copy="pr6" type="button">複製</button></div>
+      </div>
+      <div class="card" style="padding:22px">
+        <span class="tag tag-teal">行動呼籲</span>
+        <h4 style="font-size:16px;margin:10px 0 6px">明確的行動呼籲（CTA）與結語</h4>
+        <p style="font-size:13px;color:var(--ink-soft)">在結尾處，AI 確保 RSVP 方式、期限等資訊被清楚且禮貌地呈現，提高回覆率，並圓滿收束信函。</p>
+        <div class="prompt-box" id="pr7">請為一段專業論壇的邀請函設計結尾。必須禮貌地要求對方在三天內回覆是否出席，並使用「敬請 撥冗」作為結尾敬語。<button class="copy-btn" data-copy="pr7" type="button">複製</button></div>
+      </div>
+    </div>
+
+    <h3 class="sub-title gl">補充對照：一封完整的邀請函（標註結構）</h3>
+    <div class="sample-letter-wrap">
+      <div class="paper-letter">敬愛的 林教授<sup>1</sup> 道鑒<sup>2</sup>：
+
+久未請益，敬維 道體康泰、著述宏豐，無任欣頌<sup>3</sup>。
+
+本院訂於十二月十日下午二時<sup>4</sup>，假人文館三樓會議室<sup>4</sup>舉行「AI 寫作應用工作坊」<sup>5</sup>，探討生成式人工智慧於書信與應用文寫作之輔助應用。素仰 教授於應用文教學研究造詣精深<sup>6</sup>，對新科技與人文書寫之交融多所創見，懇請 撥冗蒞臨，擔任與談貴賓，惠賜指導<sup>6</sup>。
+
+隨函檢附議程乙份，敬祈 察照<sup>7</sup>。如蒙 允諾，懇請於十二月三日前惠覆<sup>8</sup>（電話：02-2345-6789；電郵：writing@school.edu.tw），俾便安排接待事宜。
+
+肅此，敬請
+誨安<sup>9</sup>
+
+<div class="sign">學生 陳小華 敬上<sup>10</sup><br>十一月十八日<sup>11</sup></div></div>
+      <div class="legend">
+        <h4>🔎 邀請函結構標註對照</h4>
+        <div class="legend-item"><span class="mn">1</span><div><b>稱謂</b>——含職稱，精確尊稱</div></div>
+        <div class="legend-item"><span class="mn">2</span><div><b>提稱語</b>——對師長用「道鑒」</div></div>
+        <div class="legend-item"><span class="mn">3</span><div><b>開頭應酬語</b>——問候與敬意</div></div>
+        <div class="legend-item"><span class="mn">4</span><div><b>活動詳情</b>——時間、地點（必須要素）</div></div>
+        <div class="legend-item"><span class="mn">5</span><div><b>活動名稱與目的</b>——讓受邀者秒懂價值</div></div>
+        <div class="legend-item"><span class="mn">6</span><div><b>邀請內容</b>——個性化＋獨特性</div></div>
+        <div class="legend-item"><span class="mn">7</span><div><b>附件語</b>——隨函檢附資料</div></div>
+        <div class="legend-item"><span class="mn">8</span><div><b>RSVP</b>——回覆方式與期限</div></div>
+        <div class="legend-item"><span class="mn">9</span><div><b>結尾敬辭</b>——對師長用「誨安」</div></div>
+        <div class="legend-item"><span class="mn">10</span><div><b>自稱、署名、末啟詞</b></div></div>
+        <div class="legend-item"><span class="mn">11</span><div><b>寫信時間</b></div></div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">【AI 應用】潛在問題、風險與注意事項（重要警示）</h3>
+    <h4 style="font-size:16px;letter-spacing:1px;margin-bottom:14px">一、AI 撰寫邀請函的潛在問題／風險</h4>
+    <div class="risk-grid">
+      <div class="card risk-card"><span class="lv lv-hi">極高風險</span><div><h4>傳統格式錯誤或術語不當</h4><p>AI 可能忽略應用文的嚴謹性，如：稱謂與提稱語的不匹配、錯用或遺漏結尾敬辭。尤其在處理上行書信時，錯誤的禮儀用語會造成嚴重失禮。</p></div></div>
+      <div class="card risk-card"><span class="lv lv-md">中度風險</span><div><h4>活動資訊細節錯誤或矛盾</h4><p>若輸入的資訊不夠精確或有歧義，AI 在整理時可能產生錯誤的時間、地點，或是在不同段落出現資訊矛盾，導致受邀者無法出席。</p></div></div>
+      <div class="card risk-card"><span class="lv lv-md">中度風險</span><div><h4>缺乏人情味或過於制式化</h4><p>AI 產出的文案可能過於工整，缺乏主辦方獨有的誠意、熱情或風格，讓受邀者感到這是罐頭信，降低參與意願。</p></div></div>
+      <div class="card risk-card"><span class="lv lv-lo">一般風險</span><div><h4>過度修飾導致重點模糊</h4><p>AI 有時會過度使用華麗的詞彙來「美化」文案，反而沖淡了活動主題、時間、地點等必須傳達的核心資訊。</p></div></div>
+    </div>
+    <h4 style="margin-top:30px;font-size:16px;letter-spacing:1px">二、避免與注意事項（降低風險的行動指南）</h4>
+    <div class="guard-grid">
+      <div class="guard"><small>【第一防線】</small><h4>最終人工作業與校對</h4><p>所有 AI 生成的邀請函，必須由人工再次審核。請特別檢查：受邀人姓名、活動時間地點，以及所有的傳統敬語和格式。</p></div>
+      <div class="guard"><small>【關鍵步驟】</small><h4>精準設定受眾與語氣</h4><p>在提示詞中，應明確告訴 AI「這封信的受邀對象是誰？」，並指定「信件應使用的提稱語和結尾敬辭」，引導 AI 選擇正確的禮儀用語。</p></div>
+      <div class="guard"><small>【效率優化】</small><h4>分段寫作，先求骨架再添肉</h4><p>優先要求 AI 產出活動資訊清晰的「正文骨架」，再針對開場、結尾、氛圍營造等「肉」的部分單獨優化，確保核心資訊的準確性。</p></div>
+      <div class="guard"><small>【風格調整】</small><h4>強調「獨特價值」而非「活動過程」</h4><p>在提示 AI 寫作時，應明確引導它突顯「受邀人參與後能獲得的獨特價值或感受」，而非僅僅是羅列議程，以增加邀請函的吸引力。</p></div>
+    </div>
+
+    <h3 class="sub-title tl">【實戰應用】如何利用 AI 工具撰寫邀請函（四步驟）</h3>
+    <div class="note tip"><span class="ic">💎</span><div>AI 寫作的價值在於「快速框架生成」、「個性化文案調整」與「創意發想」。下方每一步驟都有提示語範例，可直接到工作坊實際演練。</div></div>
+    <div class="ai-grid" style="margin-top:18px">
+      <div class="card ai-card">
+        <h4><span class="aic">1️⃣</span>步驟一：設定框架與基本資訊</h4>
+        <p>將活動的硬資訊（時間、地點、主題、受邀對象）提供給 AI，要求它生成一個基礎的正式信函框架。</p>
+        <div class="prompt-box" id="pr8">請幫我生成一封邀請函的基本框架，主題為【AI 寫作應用工作坊】，時間是【12月10日 下午2:00】，地點是【台北市信義區XX路XX號】。語氣必須正式且專業。<button class="copy-btn" data-copy="pr8" type="button">複製</button></div>
+      </div>
+      <div class="card ai-card c2">
+        <h4><span class="aic">2️⃣</span>步驟二：個性化與風格調整</h4>
+        <p>針對特定的受邀人身份（如長輩、師長、客戶），要求 AI 調整信件中的稱謂、提稱語、問候語以及整體語氣。</p>
+        <div class="prompt-box" id="pr9">假設受邀者為中文系教授，對 AI 寫作有興趣，請根據他們的身份，幫我調整開場問候和邀請內容，使其更具學術性和個人尊重。<button class="copy-btn" data-copy="pr9" type="button">複製</button></div>
+      </div>
+      <div class="card ai-card c3">
+        <h4><span class="aic">3️⃣</span>步驟三：創意設計與氛圍營造</h4>
+        <p>要求 AI 撰寫富有吸引力的開場語和結尾語，營造活動氛圍，並確保行動呼籲（RSVP）清晰。</p>
+        <div class="prompt-box" id="pr10">開場語：幫我設計一個有吸引力的開場語，語氣熱情且富有創意，適合邀請對 AI 感興趣的人參加寫作工作坊。
+結束語：請設計一段友好的結尾語，鼓勵受邀者回覆，並表達誠摯期待，確保 RSVP 資訊（如回覆期限）包含在內。<button class="copy-btn" data-copy="pr10" type="button">複製</button></div>
+      </div>
+      <div class="card ai-card c4">
+        <h4><span class="aic">4️⃣</span>步驟四：人工審核與優化</h4>
+        <p>AI 生成的內容需經過人工審核，確保傳統書信禮儀（如稱謂、提稱語、結尾敬辭）正確無誤，並調整細節，使其完全符合您的活動和對象需求。</p>
+        <div class="note gold" style="margin-top:12px"><span class="ic">🔑</span><div>此步驟為寫作的關鍵核心：<b>AI 輔助創作，但人來掌握品質。</b></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="workshop">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-badge teal">作</span>
+      <div><h2>大一國文：邀請函寫作與 AI 輔助工作坊</h2><p>教學對象：大學生｜學習目標：掌握邀請函結構並運用 AI 提升寫作效率。完成後可點擊右上角「📤 匯出 Word 檔」，將完整學習紀錄（含上傳的 AI 生成圖檔）下載為 Word 檔，上傳至課業輔導系統作業區。</p></div>
+    </div>
+
+    <div class="wk-shell">
+      <div class="wk-head">
+        <div><h3>邀請函寫作工作坊</h3><p>六個步驟：基本框架 → AI 生成與修正 → 個性化 → 開場與結束 → 綜合撰寫（含圖檔上傳）→ 自我評估</p></div>
+        <div class="wk-tools">
+          <button id="btnExportWord" type="button" class="btn-export" title="將工作坊內容匯出為 Word 檔">📤 匯出 Word 檔</button>
+          <button id="btnReset" type="button">重設全部</button>
+        </div>
+      </div>
+
+      <input type="radio" name="wkstep" id="ws1" class="ctl" checked>
+      <input type="radio" name="wkstep" id="ws2" class="ctl">
+      <input type="radio" name="wkstep" id="ws3" class="ctl">
+      <input type="radio" name="wkstep" id="ws4" class="ctl">
+      <input type="radio" name="wkstep" id="ws5" class="ctl">
+      <input type="radio" name="wkstep" id="ws6" class="ctl">
+
+      <div class="stepbar">
+        <label class="sdot" for="ws1"><span class="sn">1</span><span class="sl">基本框架</span></label>
+        <label class="sdot" for="ws2"><span class="sn">2</span><span class="sl">AI 生成與修正</span></label>
+        <label class="sdot" for="ws3"><span class="sn">3</span><span class="sl">個性化語句</span></label>
+        <label class="sdot" for="ws4"><span class="sn">4</span><span class="sl">開場與結束語</span></label>
+        <label class="sdot" for="ws5"><span class="sn">5</span><span class="sl">綜合邀請函</span></label>
+        <label class="sdot" for="ws6"><span class="sn">6</span><span class="sl">自我評估</span></label>
+      </div>
+
+      <div class="wk-body">
+        <!-- STEP 1 -->
+        <div class="wstep" data-panel="0">
+          <h4>步驟一｜邀請函的基本框架</h4>
+          <div class="goal-box">🎯 <b>學習目標：</b>① 掌握邀請函的六大基本結構。② 學會利用 AI 生成寫作框架、個性化與創意語句。③ 提升邀請函寫作的效率與質量。</div>
+          <h5 class="wsub-h" style="margin-top:0">壹、活動內容設定</h5>
+          <p class="wsub">請先為您的邀請函設定一個活動主題，此資訊將用於後續的 AI 模擬生成。</p>
+          <div class="frow c2">
+            <div class="field"><label>活動名稱 *</label><input type="text" data-bind="eventName" placeholder="例：AI 寫作應用工作坊"></div>
+            <div class="field"><label>主辦單位 <small>（落款用）</small></label><input type="text" data-bind="host" placeholder="例：中文系學會"></div>
+          </div>
+          <div class="frow c2">
+            <div class="field"><label>時間（年・月・日・活動時間）*</label><input type="text" data-bind="time" placeholder="例：12 月 10 日（週三）下午 2:00–4:00"></div>
+            <div class="field"><label>地點 *</label><input type="text" data-bind="place" placeholder="例：人文館 301 會議室"></div>
+          </div>
+          <div class="frow c2">
+            <div class="field"><label>受邀對象 <small>（姓名＋職稱）</small></label><input type="text" data-bind="invitee" placeholder="例：王小明 教授"></div>
+            <div class="field"><label>整體語氣</label>
+              <select data-bind="tone">
+                <option value="formal">正式且專業</option><option value="warm">溫馨且親切</option>
+                <option value="creative">熱情且創意</option><option value="poetic">文雅而詩意</option>
+              </select>
+            </div>
+          </div>
+          <h5 class="wsub-h">貳、邀請函結構</h5>
+          <div class="note tip" style="margin:0 0 14px"><span class="ic">💡</span><div>
+            <b>國文課堂重點講解：六大結構的關鍵作用</b>
+            <ul>
+              <li><b>受邀者稱謂</b>：務必精確，體現尊重。正式信函應包含職稱，如「尊敬的 王教授」。</li>
+              <li><b>開場問候</b>：簡潔禮貌，如「近來寒舍有恙，不知一切安好？」，為後續正式邀請鋪墊。</li>
+              <li><b>活動介紹</b>：明確說明「What」和「Why」，讓受邀者秒懂活動價值與主題。</li>
+              <li><b>活動詳情</b>：包含「When」、「Where」和「How」，務必清楚列點，方便受邀者快速記錄。</li>
+              <li><b>邀請內容</b>：這是核心賣點，強調對受邀者個人的益處或活動的獨特性、不可替代性。</li>
+              <li><b>結尾致意</b>：表達期待與感謝，並明確指示下一步行動（RSVP／回覆）。</li>
+            </ul>
+          </div></div>
+          <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:8px">請在下方欄位中，簡述每個結構應包含的「核心內容」。</p>
+          <table class="core-table">
+            <thead><tr><th style="width:34%">結構</th><th>核心內容（請填寫）</th></tr></thead>
+            <tbody>
+              <tr><td><b>① 受邀者稱謂</b><small>體現尊重，含職稱</small></td><td><textarea data-core="salutation" placeholder="例：敬愛的 王教授 道鑒"></textarea></td></tr>
+              <tr><td><b>② 開場問候</b><small>簡潔禮貌，鋪墊邀請</small></td><td><textarea data-core="greeting" placeholder="例：近來寒舍有恙，不知一切安好？"></textarea></td></tr>
+              <tr><td><b>③ 活動介紹</b><small>目的／主題（What & Why）</small></td><td><textarea data-core="intro" placeholder="例：為探討 AI 輔助書寫的應用⋯"></textarea></td></tr>
+              <tr><td><b>④ 活動詳情</b><small>時間／地點／形式（When / Where / How）</small></td><td><textarea data-core="detail" placeholder="例：演講＋實作，備有茶點"></textarea></td></tr>
+              <tr><td><b>⑤ 邀請內容</b><small>參與原因／價值（核心賣點）</small></td><td><textarea data-core="value" placeholder="例：素仰 教授於⋯懇請 撥冗蒞臨"></textarea></td></tr>
+              <tr><td><b>⑥ 結尾致意</b><small>期待＋RSVP 行動呼籲</small></td><td><textarea data-core="closing" placeholder="例：懇請於 12/3 前惠覆⋯"></textarea></td></tr>
+            </tbody>
+          </table>
+          <div class="wstep-nav"><span></span><label class="btn btn-verm" for="ws2">下一步 →</label></div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="wstep" data-panel="1">
+          <h4>步驟二｜AI 生成框架與修正</h4>
+          <div class="settings-echo"><b>您目前的活動設定：</b><span>活動名稱：<em id="echoName">（尚未填寫）</em></span><span>時間／地點：<em id="echoTimePlace">（尚未填寫）</em></span></div>
+          <h5 class="wsub-h">壹、問題設定（提示語撰寫）</h5>
+          <div class="note gold" style="margin-bottom:10px"><span class="ic">🎯</span><div><b>提示語寫作原則：STAR 要素。</b>一個好的提示語能讓 AI 產出更精確的結果，請務必包含以下要素。</div></div>
+          <div class="two-col">
+            <div>
+              <div class="star-list">
+                <div class="star-item" id="stS"><span class="st">○</span><b>S｜Style 角色／風格</b>指定語氣（如：正式、專業、親切）</div>
+                <div class="star-item" id="stT"><span class="st">○</span><b>T｜Task 任務</b>明確目標（如：生成邀請函的六大結構框架）</div>
+                <div class="star-item" id="stA"><span class="st">○</span><b>A｜Audience 對象</b>明確讀者（如：學生、教授、業界人士）</div>
+                <div class="star-item" id="stR"><span class="st">○</span><b>R｜Requirements 要求</b>具體條件（如：主題必須是 OOOO、字數限制等）</div>
+              </div>
+              <div class="field"><label>您的提示語 <small>（引導 AI 產生正式且專業的邀請函框架）</small></label><textarea id="prompt2" data-bind="prompt2" rows="7" placeholder="例：請幫我生成一封正式且專業的邀請函框架，主題為⋯，受邀對象為⋯，須包含六大結構⋯"></textarea></div>
+              <div class="tpl-row">
+                <button class="btn-mini tpl-fill" type="button" data-tpl="0">填入範例①（正式）</button>
+                <button class="btn-mini tpl-fill" type="button" data-tpl="1">填入範例②（溫馨）</button>
+                <button class="btn-mini tpl-fill" type="button" data-tpl="2">填入範例③（創意）</button>
+              </div>
+            </div>
+            <div>
+              <h5 class="wsub-h" style="margin-top:0">貳、AI 生成內容（模擬結果）</h5>
+              <div class="gen-row">
+                <button class="btn-mini solid" id="btnGen2" type="button">⚡ 模擬 AI 生成框架</button>
+                <button class="btn-mini" id="btnToFix2" type="button">↓ 帶入修正區</button>
+              </div>
+              <div class="ai-out"><div class="ai-out-bar"><i></i><i></i><i></i><span>AI 模擬輸出・邀請函框架（範例）</span></div><div class="ai-out-body" id="out2">【標題】「AI 寫作應用工作坊」邀請函
+
+【稱謂】敬愛的 王教授 道鑒：
+
+【開場問候】久未請益，敬維 起居佳勝，諸事順遂。
+
+【活動介紹】為促進交流學習、分享前沿趨勢，我們訂於近期舉辦「AI 寫作應用工作坊」。
+
+【活動詳情】
+・時間：12 月 10 日（週三）下午 2:00
+・地點：人文館 301 會議室
+・形式：演講＋實作
+
+【邀請內容】素仰 台端學養深厚、望重一方，懇請 撥冗蒞臨，惠賜指導。
+
+【結尾致意】敬請 惠覆出席意願，回覆方式與期限詳如附註。
+
+【落款】中文系學會 敬邀</div></div>
+              <p class="ai-hint">💡 上方為範例輸出；點擊「模擬 AI 生成框架」後，將依你的活動設定與提示語重新生成。</p>
+              <h5 class="wsub-h">參、修正與優化</h5>
+              <div class="field"><label>修改後內容 <small>（請根據活動需求和受邀者身份修改，使其更符合實際應用）</small></label><textarea id="revised2" data-bind="revised2" rows="6" placeholder="將生成結果帶入後，修改成更符合實際應用的版本⋯"></textarea></div>
+            </div>
+          </div>
+          <div class="wstep-nav"><label class="btn btn-ghost" for="ws1">← 上一步</label><label class="btn btn-verm" for="ws3">下一步 →</label></div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="wstep" data-panel="2">
+          <h4>步驟三｜個性化語句撰寫</h4>
+          <p class="wsub"><b>活動目標：</b>如何讓邀請函顯得不只是大量發送，而是專門為受邀者所寫？關鍵在於「個性化」語句。</p>
+          <div class="note gold" style="margin-bottom:18px"><span class="ic">🖋️</span><div><b>個性化寫作技巧：展現而非告知（Show, Don't Tell）。</b>當你邀請某人時，不要只說「你的意見很重要」。要具體提到「我們注意到你在〔某領域〕的研究，這與我們〔活動主題〕高度相關」。具體的細節能讓受邀者感到被尊重和重視，從而提高回覆率。</div></div>
+          <div class="two-col">
+            <div>
+              <h5 class="wsub-h" style="margin-top:0">壹、背景資訊設定</h5>
+              <div class="frow c2">
+                <div class="field"><label>假設受邀者身份</label><input type="text" data-bind="pName" placeholder="例：王教授"></div>
+                <div class="field"><label>受邀者興趣／貢獻（與活動相關）</label><input type="text" data-bind="pField" placeholder="例：唐詩與數位人文"></div>
+              </div>
+              <div class="field"><label>與活動的連結點 <small>（選填）</small></label><input type="text" data-bind="pRel" placeholder="例：上次演講中關於 AI 與古典文學的見解"></div>
+              <h5 class="wsub-h">貳、AI 生成個性化語句</h5>
+              <div class="field"><label>您的提示語 <small>（根據上述背景資訊，生成「邀請內容」中的個性化語句）</small></label><textarea id="prompt3" data-bind="prompt3" rows="4" placeholder="例：請根據上述背景，生成一段展現誠意與具體細節的邀請內容⋯"></textarea></div>
+              <div class="gen-row"><button class="btn-mini solid" id="btnGen3" type="button">⚡ 模擬 AI 生成個性化語句</button></div>
+              <div class="ai-out"><div class="ai-out-bar"><i></i><i></i><i></i><span>AI 模擬輸出・個性化語句（範例）</span></div><div class="ai-out-body" id="out3">我們一向關注 王教授 在「唐詩與數位人文」的耕耘與見解，這與本次「AI 寫作應用工作坊」的主題高度契合。深信您的蒞臨，必能為全場帶來深刻的啟發。</div></div>
+              <p class="ai-hint">💡 上方為範例輸出；點擊按鈕後將依你填寫的背景資訊重新生成。</p>
+            </div>
+            <div>
+              <h5 class="wsub-h" style="margin-top:0">參、您的評價與修正</h5>
+              <div class="field"><label>1. 語氣是否適合（正式、親切、專業等）？</label></div>
+              <div class="eval-row">
+                <label><input type="radio" name="eval3" value="適合" checked> 適合</label>
+                <label><input type="radio" name="eval3" value="需微調"> 需微調</label>
+                <label><input type="radio" name="eval3" value="需重寫"> 需重寫</label>
+              </div>
+              <div class="field"><label>2. 是否有必要調整的地方？</label><textarea data-bind="fixNote" rows="3" placeholder="例：敬語再多一些、加入活動主題關鍵字⋯"></textarea></div>
+              <div class="field"><label>3. 修改後的版本</label><textarea id="fix3" data-bind="fix3" rows="6" placeholder="把 AI 生成的語句改寫成你最滿意的版本⋯"></textarea></div>
+            </div>
+          </div>
+          <div class="wstep-nav"><label class="btn btn-ghost" for="ws2">← 上一步</label><label class="btn btn-verm" for="ws4">下一步 →</label></div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="wstep" data-panel="3">
+          <h4>步驟四｜創意開場與結束語設計</h4>
+          <p class="wsub"><b>創意目標：</b>好的開場能抓住受邀者的目光，好的結束能提高回應率。使用 AI 讓語氣更生動！</p>
+          <div class="note gold" style="margin-bottom:18px"><span class="ic">🚀</span><div><b>關鍵功能：鉤子（Hook）與行動呼籲（CTA）。</b><br><b>開場語（Hook）</b>：必須在 1–2 句話內引起好奇心或切中痛點，例如提問、陳述一個令人興奮的事實，讓讀者想繼續閱讀。<br><b>結束語（CTA - Call to Action）</b>：需明確告知受邀者下一步要做什麼（回覆、點擊連結、報名），並創造緊迫感或期待感，促使其行動。</div></div>
+          <div class="blocks-2">
+            <div class="block-card">
+              <h5>🎬 壹、開場語練習</h5>
+              <p class="bd">您的提示語（要求：熱情、有吸引力）</p>
+              <div class="field"><label>風格</label>
+                <select data-bind="hookStyle"><option value="passion">熱情有創意</option><option value="poetic">充滿詩意</option><option value="formal">專業穩重</option></select>
+              </div>
+              <div class="field"><label>您的提示語</label><input type="text" data-bind="prompt4a" placeholder="例：幫我設計一個有吸引力的開場語⋯"></div>
+              <div class="gen-row"><button class="btn-mini solid" id="btnGenHook" type="button">⚡ 模擬 AI 生成開場語</button></div>
+              <div class="ai-out"><div class="ai-out-bar"><i></i><i></i><i></i><span>AI 模擬輸出・開場語（範例）</span></div><div class="ai-out-body" id="outHook">當書寫遇上 AI，會擦出什麼火花？誠邀您親臨「AI 寫作應用工作坊」，一起見證文字的新可能！</div></div>
+              <p class="ai-hint">💡 上方為範例輸出；點擊按鈕後將依你的風格選擇重新生成。</p>
+              <div class="field"><label>您的感想與修改後的版本</label><textarea id="hookFix" data-bind="hookFix" rows="3" placeholder="滿意就直接留空；想修改就在此寫下你的版本⋯"></textarea></div>
+            </div>
+            <div class="block-card">
+              <h5>📮 貳、結束語練習</h5>
+              <p class="bd">您的提示語（要求：友好、表達期待、鼓勵回覆）</p>
+              <div class="frow c2">
+                <div class="field"><label>回覆方式（RSVP）</label><input type="text" data-bind="rsvp" placeholder="例：電郵 writing@school.edu.tw"></div>
+                <div class="field"><label>回覆期限</label><input type="text" data-bind="deadline" placeholder="例：12 月 3 日前"></div>
+              </div>
+              <div class="frow c2">
+                <div class="field"><label>風格</label>
+                  <select data-bind="ctaStyle"><option value="polite">禮貌正式</option><option value="warm">友好溫暖</option><option value="urgent">營造急迫感</option></select>
+                </div>
+                <div class="field"><label>您的提示語</label><input type="text" data-bind="prompt4b" placeholder="例：設計結尾並附上 RSVP⋯"></div>
+              </div>
+              <div class="gen-row"><button class="btn-mini solid" id="btnGenCta" type="button">⚡ 模擬 AI 生成結束語</button></div>
+              <div class="ai-out"><div class="ai-out-bar"><i></i><i></i><i></i><span>AI 模擬輸出・結束語（範例）</span></div><div class="ai-out-body" id="outCta">懇請 於 12 月 3 日前惠覆是否撥冗出席（回覆方式：電郵 writing@school.edu.tw）。敬請 蒞臨指導，實感榮幸。</div></div>
+              <p class="ai-hint">💡 上方為範例輸出；點擊按鈕後將依你的風格選擇重新生成。</p>
+              <div class="field"><label>您的感想與修改後的版本</label><textarea id="ctaFix" data-bind="ctaFix" rows="3" placeholder="滿意就直接留空；想修改就在此寫下你的版本⋯"></textarea></div>
+            </div>
+          </div>
+          <div class="wstep-nav"><label class="btn btn-ghost" for="ws3">← 上一步</label><label class="btn btn-verm" for="ws5">下一步 →</label></div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="wstep" data-panel="4">
+          <h4>步驟五｜綜合邀請函撰寫</h4>
+          <p class="wsub"><b>總結目標：</b>請根據前面四個步驟的練習結果，將優化後的各個環節組合成一份完整的邀請函；亦可附上以生成式 AI 製作的邀請函設計圖檔。</p>
+          <div class="toolbar">
+            <button class="btn btn-teal" id="btnCompose" type="button">🧩 自動匯入草稿</button>
+            <button class="btn-mini" id="btnCopyLetter" type="button">📋 複製全文</button>
+            <button class="btn-mini js-export" type="button">📤 匯出 Word 檔</button>
+            <span style="font-size:12.5px;color:var(--ink-faint)">💡 點擊「自動匯入草稿」可快速匯入前面步驟優化後的內容（如果已填寫）。</span>
+          </div>
+          <div class="draft-view">
+            <div class="field" style="margin:0"><label>綜合邀請函草稿</label><textarea id="draftArea" rows="20" placeholder="點擊「自動匯入草稿」，或直接在此撰寫⋯"></textarea></div>
+            <div>
+              <label style="font-size:13px;font-weight:700;letter-spacing:1px;display:block;margin-bottom:8px">📄 信函預覽</label>
+              <div class="paper-letter" id="letterPreview" style="font-size:14px;line-height:2;padding:30px 28px;min-height:430px">（完成匯入後，這裡會以信紙樣式即時呈現⋯）</div>
+            </div>
+          </div>
+
+          <h5 class="wsub-h">貳、邀請函 AI 生成圖檔上傳 <span class="tag tag-gold" id="imgCount">已上傳 0 / 4 張</span></h5>
+          <div class="note tip" style="margin-bottom:12px"><span class="ic">🎨</span><div style="font-size:13.5px">若你曾使用生成式 AI 圖像工具（如 ChatGPT／DALL·E、Midjourney 等）為邀請函製作設計圖或意境圖，可在此上傳。圖片可加上圖說，並會一併嵌入「匯出的 Word 檔」，讓作業更完整。支援 JPG／PNG／GIF／WEBP，單檔上限 8MB，最多 4 張。</div></div>
+          <label class="upload-zone" id="uploadZone" for="fileInput">
+            <input type="file" id="fileInput" class="ctl" accept="image/*" multiple>
+            <span class="uz-ic">🖼️</span>
+            <b>點擊此處選擇圖片，或將圖片拖曳到這裡</b>
+            <p>可一次多選；上傳後可為每張圖加上圖說，亦可隨時刪除</p>
+          </label>
+          <div class="img-grid" id="imgGrid"><p class="img-empty">尚未上傳圖片。點擊上方區域或拖曳圖片即可上傳。</p></div>
+
+          <div class="wstep-nav"><label class="btn btn-ghost" for="ws4">← 上一步</label><label class="btn btn-verm" for="ws6">下一步 →</label></div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="wstep" data-panel="5">
+          <h4>步驟六｜自我評估與反思</h4>
+          <p class="wsub"><b>反思目標：</b>評估 AI 在寫作過程中的價值，以及思考未來的應用方向。完成後點擊右上角「📤 匯出 Word 檔」儲存完整學習紀錄（含上傳圖檔）。</p>
+          <div class="field"><label>本次練習中，你覺得 AI（或模擬 AI）提供的幫助程度？</label>
+            <select id="starsSel" data-bind="starsSel">
+              <option value="0">（請選擇）</option>
+              <option value="1">★☆☆☆☆（1/5）</option>
+              <option value="2">★★☆☆☆（2/5）</option>
+              <option value="3">★★★☆☆（3/5）</option>
+              <option value="4">★★★★☆（4/5）</option>
+              <option value="5">★★★★★（5/5）</option>
+            </select>
+          </div>
+          <div class="field"><label>一、您認為 AI 在哪些方面提供了幫助？</label><textarea data-bind="q1" rows="3" placeholder="例：快速產生框架、節省構思時間⋯"></textarea></div>
+          <div class="field"><label>二、哪些部分需要進一步改進？</label><textarea data-bind="q2" rows="3" placeholder="例：敬語不夠精確、語氣略顯制式⋯"></textarea></div>
+          <div class="field"><label>三、未來，您會如何運用 AI 輔助寫作？</label><textarea data-bind="q3" rows="3" placeholder="例：先骨架後血肉、務必人工校對⋯"></textarea></div>
+          <div class="done-banner" id="doneBanner">
+            <h4>🎉 恭喜完成工作坊！</h4>
+            <p>你已經走完「基本框架 → AI 生成 → 個性化 → 創意 → 整合 → 反思」的完整流程。請將學習紀錄（含上傳的邀請函圖檔）匯出為 Word 檔，並上傳至課業輔導系統作業區！</p>
+            <button class="btn btn-white js-export" type="button">📤 匯出工作坊紀錄（Word 檔）並準備繳交</button>
+          </div>
+          <div class="note tip" style="margin-top:18px"><span class="ic">📤</span><div style="font-size:13.5px"><b>繳交提醒：</b>完成本步驟後，請點擊本頁右上角「📤 匯出 Word 檔」下載學習紀錄（將一併包含你在步驟五上傳的邀請函圖檔），再將 Word 檔上傳至課業輔導系統作業區。</div></div>
+          <div class="wstep-nav"><label class="btn btn-ghost" for="ws5">← 上一步</label><a class="btn btn-verm" href="#assignment">前往作業說明 →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="assignment">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-badge">作</span>
+      <div><h2>【作業】邀請函寫作任務</h2><p>請完成「邀請函寫作工作坊」，將工作坊內容（含上傳的邀請函 AI 生成圖檔）匯出為 Word 檔，並將該 Word 檔上傳至課業輔導系統作業區。可配合生成式 AI 進行輔助創作——但別忘了：AI 輔助創作，人來掌握品質。</p></div>
+    </div>
+    <div class="asg-grid">
+      <div class="card asg-list">
+        <li><span class="an">壹</span><div><b>完成工作坊</b><br><span style="font-size:13px;color:var(--ink-soft)">依序完成工作坊六個步驟（基本框架 → 自我評估），擬寫一篇完整的「邀請函」，可配合生成式 AI 輔助創作。</span></div></li>
+        <li><span class="an">貳</span><div><b>上傳 AI 生成圖檔（選做加分）</b><br><span style="font-size:13px;color:var(--ink-soft)">在步驟五上傳以生成式 AI 製作的邀請函設計圖檔（最多 4 張），圖檔將一併嵌入匯出的 Word 檔。</span></div></li>
+        <li><span class="an">參</span><div><b>匯出 Word 檔</b><br><span style="font-size:13px;color:var(--ink-soft)">點擊工作坊右上角或步驟六的「📤 匯出 Word 檔」按鈕，下載完整的工作坊內容（含邀請函草稿、反思與圖檔）。</span></div></li>
+        <li><span class="an">肆</span><div><b>上傳作業</b><br><span style="font-size:13px;color:var(--ink-soft)">請將作業（Word 檔）上傳至課業輔導系統作業區。教材區與作業區亦有範本可供參考。</span></div></li>
+        <div class="note gold" style="margin-top:16px"><span class="ic">💡</span><div style="font-size:13px">上傳前請再次確認受邀人姓名、時間、地點與敬語格式是否正確無誤。</div></div>
+        <div style="margin-top:16px"><a class="btn btn-teal" href="#workshop">回到工作坊完成並匯出 ↑</a></div>
+      </div>
+      <div class="card check-list">
+        <h4>✅ 繳交前自我檢查清單</h4>
+        <label class="check-item"><input type="checkbox"><span>已完成工作坊六個步驟（基本框架 → 自我評估）</span></label>
+        <label class="check-item"><input type="checkbox"><span>邀請函稱謂與敬語正確（未誤用「恭啟／敬啟」）</span></label>
+        <label class="check-item"><input type="checkbox"><span>時間、地點與 RSVP 資訊清楚明確</span></label>
+        <label class="check-item"><input type="checkbox"><span>已進行人工審核與校對</span></label>
+        <label class="check-item"><input type="checkbox"><span>（選做）已上傳邀請函 AI 生成圖檔並填寫圖說</span></label>
+        <label class="check-item"><input type="checkbox"><span>已點擊「📤 匯出 Word 檔」並確認下載成功</span></label>
+        <label class="check-item"><input type="checkbox"><span>已開啟 Word 檔確認內容與圖片完整可讀</span></label>
+        <label class="check-item"><input type="checkbox"><span>已將 Word 檔上傳至課業輔導系統作業區</span></label>
+        <div class="check-progress"><i id="checkBar"></i></div>
+        <div class="check-progress-txt" id="checkTxt">完成進度：0 / 8</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="f-seal">書</div>
+        <h5>書信 × 邀請函 × AI 互動學習平台</h5>
+        <p>完整整合《書信與 AI 邀請函課程總覽（學習指引）》與《邀請函寫作與 AI 輔助工作坊》兩份教材：傳統書信與應用文基礎、書信結構與常見術語、AI 時代的邀請函寫作、六步驟實戰工作坊，並支援邀請函 AI 生成圖檔上傳與 Word 檔匯出繳交。</p>
+      </div>
+      <div>
+        <h5>快速導航</h5>
+        <ul>
+          <li><a href="#basics">傳統書信與應用文基礎</a></li>
+          <li><a href="#structure">書信結構與常見術語</a></li>
+          <li><a href="#ai-invite">AI 時代的邀請函寫作</a></li>
+          <li><a href="#workshop">邀請函寫作與 AI 輔助工作坊</a></li>
+          <li><a href="#assignment">【作業】邀請函寫作任務</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>學習叮嚀</h5>
+        <p>◆ 格式是禮數的載體，不可輕忽。<br>◆ 提示語越精確，AI 產出越到位。<br>◆ 骨架先對，血肉再美。<br>◆ AI 輔助創作，但人來掌握品質。<br>◆ 記得匯出 Word 檔，上傳課業輔導系統。</p>
+      </div>
+    </div>
+    <div class="f-bottom">11/18 課程總覽：書信、邀請函與 AI 應用｜互動學習完整版</div>
+  </div>
+</footer>
+
+<div id="toast"></div>
+<button id="toTop" aria-label="回到頂端">↑</button>
+
+<script>
+(function(){
+'use strict';
+function $(id){return document.getElementById(id);}
+function toast(msg){var t=$('toast');if(!t)return;t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('show');},2400);}
+function copyText(txt,msg){
+  function ok(){toast(msg||'已複製 ✓');}
+  function fb(){var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}ta.remove();ok();}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok).catch(fb);}else{fb();}
+}
+function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
+function pad2(n){return (n<10?'0':'')+n;}
+function escW(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+try{
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.08,rootMargin:'0px 0px 8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+}catch(e){}
+setTimeout(function(){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});},1800);
+
+document.querySelectorAll('.copy-btn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=$(b.dataset.copy),txt='';
+    if(el&&el.childNodes.length&&el.childNodes[0].nodeType===3){txt=el.childNodes[0].nodeValue;}
+    else if(el){txt=el.innerText.replace(/複製\s*$/,'');}
+    copyText(txt.trim(),'提示語已複製 ✓');
+  });
+});
+
+/* ---------- 工作坊狀態 ---------- */
+var KEY='letterAI_workshop_v4';
+var S={eventName:'',time:'',place:'',host:'',invitee:'',tone:'formal',
+  core:{salutation:'',greeting:'',intro:'',detail:'',value:'',closing:''},
+  prompt2:'',revised2:'',gen2:'',pName:'',pField:'',pRel:'',prompt3:'',fixNote:'',fix3:'',gen3:'',eval3:'適合',
+  hookStyle:'passion',prompt4a:'',hookFix:'',genHook:'',
+  ctaStyle:'polite',rsvp:'',deadline:'',prompt4b:'',ctaFix:'',genCta:'',
+  draft:'',starsSel:'0',q1:'',q2:'',q3:''};
+var imgs=[]; /* {name, dataURL, caption} */
+var imgSaveWarned=false;
+
+try{
+  var saved=JSON.parse(localStorage.getItem(KEY));
+  if(saved){
+    for(var k in saved){
+      if(k==='core'){S.core=Object.assign(S.core,saved.core||{});}
+      else if(k==='imgs'){/* handled below */}
+      else if(S.hasOwnProperty(k)){S[k]=saved[k];}
+    }
+    if(saved.imgs&&saved.imgs.length){imgs=saved.imgs.slice(0,4);}
+  }
+}catch(e){}
+
+document.querySelectorAll('[data-bind]').forEach(function(el){
+  var k=el.dataset.bind;if(S[k]!==undefined&&S[k]!==null)el.value=S[k];
+});
+document.querySelectorAll('[data-core]').forEach(function(el){
+  var k=el.dataset.core;if(S.core[k])el.value=S.core[k];
+});
+
+var saveTimer=null;
+function scheduleSave(){
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(persist,400);
+}
+function persist(){
+  var payload=Object.assign({},S,{imgs:imgs});
+  try{
+    localStorage.setItem(KEY,JSON.stringify(payload));
+  }catch(e){
+    try{
+      payload.imgs=[];
+      localStorage.setItem(KEY,JSON.stringify(payload));
+      if(!imgSaveWarned&&imgs.length){imgSaveWarned=true;toast('圖片較大無法自動儲存，但仍會包含在匯出的 Word 檔中');}
+    }catch(e2){}
+  }
+}
+function updateEcho(){
+  var en=$('echoName'),tp=$('echoTimePlace');
+  if(!en||!tp)return;
+  en.textContent=(S.eventName||'').trim()||'（尚未填寫）';
+  var arr=[(S.time||'').trim(),(S.place||'').trim()].filter(Boolean).join('｜');
+  tp.textContent=arr||'（尚未填寫）';
+}
+updateEcho();
+
+document.addEventListener('input',function(e){
+  var el=e.target;
+  if(el.dataset&&el.dataset.bind!==undefined){
+    S[el.dataset.bind]=el.value;
+    if(el.id==='prompt2')checkStar();
+    if(el.dataset.bind==='eventName'||el.dataset.bind==='time'||el.dataset.bind==='place')updateEcho();
+    if(el.id==='starsSel'||el.dataset.bind==='q1')refreshDone();
+    scheduleSave();
+  }
+  if(el.dataset&&el.dataset.core!==undefined){S.core[el.dataset.core]=el.value;scheduleSave();}
+  if(el.id==='draftArea'){S.draft=el.value;renderPreview();scheduleSave();}
+});
+document.addEventListener('change',function(e){
+  if(e.target.name==='eval3'){S.eval3=e.target.value;scheduleSave();}
+});
+
+/* ---------- STAR 檢測 ---------- */
+var STAR_PAT={S:/正式|專業|親切|熱情|溫馨|活潑|創意|詩意|莊重|語氣|風格/,T:/生成|撰寫|寫出|擬|產生|起草|設計|改寫|潤飾|框架|產出/,A:/教授|老師|學生|客戶|夥伴|長輩|平輩|晚輩|來賓|貴賓|對象|受邀|業界/,R:/字|主題|時間|地點|提稱語|敬辭|格式|條件|必須|包含|限制|結構|期限/};
+function checkStar(){
+  var t=S.prompt2||'';
+  ['S','T','A','R'].forEach(function(key){
+    var el=$('st'+key);if(!el)return;
+    var ok=STAR_PAT[key].test(t);
+    el.classList.toggle('ok',ok);
+    el.querySelector('.st').textContent=ok?'✔':'○';
+  });
+}
+checkStar();
+
+/* ---------- 模擬生成 ---------- */
+function honorific(){
+  var n=(S.invitee||'').trim();
+  if(/教授/.test(n))return '道鑒';
+  if(/老師|師長/.test(n))return '函丈';
+  if(/校長|院長|會長|董事長|經理|總監|局長|主任/.test(n))return '鈞鑒';
+  return '臺鑒';
+}
+function genFramework(){
+  var ev=S.eventName||'（活動名稱）',t=S.time||'（請填寫時間）',p=S.place||'（請填寫地點）';
+  var name=(S.invitee||'').trim()||'＿＿＿';
+  var greetMap={formal:'久未請益，敬維 起居佳勝，諸事順遂。',warm:'好久不見，近來好嗎？願一切順心如意。',creative:'見字如面！願這封信為您的一天增添一點亮光。',poetic:'時序更迭，紙短情長，遙祝 安好。'};
+  var valMap={formal:'素仰 台端學養深厚、望重一方，懇請 撥冗蒞臨，惠賜指導。',warm:'很期待您能來，和我們一起共度這段有意義的時光。',creative:'我們相信，少了您，這場活動就不完整！',poetic:'期盼您如約而至，與我們共寫這一頁難忘的篇章。'};
+  var g=greetMap[S.tone]||greetMap.formal,v=valMap[S.tone]||valMap.formal;
+  return '【標題】「'+ev+'」邀請函\n\n【稱謂】敬愛的 '+name+' '+honorific()+'：\n\n【開場問候】'+g+'\n\n【活動介紹】為'+((S.core.intro||'').trim()||'促進交流學習、分享前沿趨勢')+'，我們訂於近期舉辦「'+ev+'」。\n\n【活動詳情】\n・時間：'+t+'\n・地點：'+p+'\n・形式：'+((S.core.detail||'').trim()||'（請補充：演講／工作坊／茶會⋯）')+'\n\n【邀請內容】'+v+((S.core.value||'').trim()?('\n（補充：'+S.core.value.trim()+'）'):'')+'\n\n【結尾致意】敬請 惠覆出席意願，回覆方式與期限詳如附註。\n\n【落款】'+((S.host||'').trim()||'主辦單位')+' 敬邀';
+}
+function genPersonal(){
+  var n=(S.pName||'').trim()||'您',f=(S.pField||'').trim()||'相關領域',c=(S.pRel||'').trim();
+  var ev=S.eventName||'本次活動';
+  var base='我們一向關注 '+n+' 在「'+f+'」的耕耘與見解';
+  var mid=c?('，特別是「'+c+'」，與本次「'+ev+'」的主題高度呼應'):('，這與本次「'+ev+'」的主題高度契合');
+  var tail=pick(['深信您的蒞臨，必能為全場帶來深刻的啟發。','因此格外期盼您能撥冗參與，與我們分享您的洞見。','誠盼藉此機會，當面向您請益。']);
+  return base+mid+'。'+tail;
+}
+function genHookFn(){
+  var ev=S.eventName||'本次活動';
+  var map={
+    passion:['當書寫遇上 AI，會擦出什麼火花？'+(S.time||'活動當日')+'，誠邀您親臨「'+ev+'」，一起見證文字的新可能！','一場關於「文字 × 科技」的相遇即將展開——「'+ev+'」，期待您的熱情參與！'],
+    poetic:['在科技的喧囂中，我們想為您留一盞燈、一方紙、片刻寧靜。「'+ev+'」，靜候您的到來。','墨香與光影交織的午後，「'+ev+'」將如一封遲來的書信，輕輕叩響您的門扉。'],
+    formal:['當人工智慧重新定義書寫，我們誠摯邀請您蒞臨「'+ev+'」，共同探討這個時代的嶄新命題。']
+  };
+  return pick(map[S.hookStyle]||map.formal);
+}
+function genCtaFn(){
+  var dl=(S.deadline||'').trim()||'一週內',rs=(S.rsvp||'').trim()||'電子郵件';
+  var map={
+    polite:['懇請 於'+dl+'惠覆是否撥冗出席（回覆方式：'+rs+'）。敬請 蒞臨指導，實感榮幸。'],
+    warm:['如果您願意參加，請在'+dl+'前透過'+rs+'告訴我們，我們會為您保留席位，期待與您相見！'],
+    urgent:['名額有限，敬請把握！請於'+dl+'前透過'+rs+'完成回覆，為我們留下您寶貴的一席。']
+  };
+  return pick(map[S.ctaStyle]||map.polite);
+}
+function typeInto(el,text){
+  if(!el)return;
+  if(el._t){clearInterval(el._t);el._t=null;}
+  el.textContent='';var i=0;
+  el._t=setInterval(function(){
+    i+=3;el.textContent=text.slice(0,i);
+    if(i>=text.length){clearInterval(el._t);el._t=null;el.textContent=text;}
+    el.scrollTop=el.scrollHeight;
+  },14);
+}
+$('btnGen2').addEventListener('click',function(){S.gen2=genFramework();typeInto($('out2'),S.gen2);scheduleSave();toast('框架已生成 ✓');});
+$('btnToFix2').addEventListener('click',function(){
+  if(!S.gen2){toast('請先點擊「模擬 AI 生成框架」');return;}
+  $('revised2').value=S.gen2;S.revised2=S.gen2;scheduleSave();toast('已帶入修正區 ✓');
+});
+$('btnGen3').addEventListener('click',function(){S.gen3=genPersonal();typeInto($('out3'),S.gen3);scheduleSave();toast('個性化語句已生成 ✓');});
+$('btnGenHook').addEventListener('click',function(){S.genHook=genHookFn();typeInto($('outHook'),S.genHook);scheduleSave();toast('開場語已生成 ✓');});
+$('btnGenCta').addEventListener('click',function(){S.genCta=genCtaFn();typeInto($('outCta'),S.genCta);scheduleSave();toast('結束語已生成 ✓');});
+
+var TPLS=[
+  function(){return '請幫我生成一封邀請函的基本框架。主題為「'+(S.eventName||'AI 寫作應用工作坊')+'」，時間 '+(S.time||'12月10日 下午2:00')+'，地點 '+(S.place||'臺北市信義區')+'。受邀對象為 '+(S.invitee||'中文系教授')+'。語氣必須正式且專業，須包含六大結構，結尾使用「敬請 道安」。';},
+  function(){return '請撰寫一封溫馨親切的邀請函，邀請 '+(S.invitee||'長期合作的夥伴')+' 參加「'+(S.eventName||'歲末感謝茶會')+'」。時間：'+(S.time||'12月下旬')+'；地點：'+(S.place||'待定')+'。語氣溫暖且充滿感激，使用「臺鑒」作為提稱語。';},
+  function(){return '請設計一封充滿創意的邀請函，用熱情活潑的語氣邀請學生參加「'+(S.eventName||'AI 寫作黑客松')+'」，時間 '+(S.time||'暫定')+'、地點 '+(S.place||'暫定')+'。開場要用一個吸引人的提問，字數 300 字以內。';}
+];
+document.querySelectorAll('.tpl-fill').forEach(function(b){
+  b.addEventListener('click',function(){
+    var txt=TPLS[+b.dataset.tpl]();
+    $('prompt2').value=txt;S.prompt2=txt;checkStar();scheduleSave();toast('範例已填入，可再修改 ✎');
+  });
+});
+
+/* ---------- 整合草稿 ---------- */
+function composeLetter(){
+  var ev=S.eventName||'（活動名稱）',t=S.time||'（時間）',p=S.place||'（地點）';
+  var name=(S.invitee||'').trim();
+  var sal=name?('敬愛的 '+name+' '+honorific()+'：'):('敬愛的 貴賓 臺鑒：');
+  var opening=(S.hookFix||'').trim()||S.genHook||('誠摯邀請您參與「'+ev+'」。');
+  var intro=(S.core.intro||'').trim()||('為促進交流與學習，我們即將舉辦「'+ev+'」，誠摯邀請您撥冗蒞臨。');
+  var personal=((S.fix3||'').trim()||S.gen3||'').trim();
+  var value=(S.core.value||'').trim()||('您的參與，將是本次活動最珍貴的支持；亦盼藉此機會，與您深入交流。');
+  var closing=(S.ctaFix||'').trim()||S.genCta||('敬請於活動前惠覆出席意願（回覆方式：'+(S.rsvp||'電子郵件')+'，期限：'+(S.deadline||'一週內')+'）。');
+  var host=(S.host||'').trim()||'主辦單位';
+  var txt='【'+ev+' 邀請函】\n\n'+sal+'\n\n'+opening+'\n\n'+intro+'\n';
+  if(personal)txt+='\n'+personal+'\n';
+  txt+='\n■ 活動詳情\n・時間：'+t+'\n・地點：'+p+((S.core.detail||'').trim()?('\n・形式：'+S.core.detail.trim()):'')+'\n\n'+value+'\n\n'+closing+'\n\n敬請 撥冗蒞臨，實感榮幸。\n\n'+host+' 敬邀';
+  return txt;
+}
+function renderPreview(){
+  var el=$('letterPreview');if(!el)return;
+  var t=S.draft||'';
+  el.textContent=t.trim()?t:'（完成匯入後，這裡會以信紙樣式即時呈現⋯）';
+}
+var btnCompose=$('btnCompose');
+if(btnCompose)btnCompose.addEventListener('click',function(){
+  S.draft=composeLetter();$('draftArea').value=S.draft;renderPreview();scheduleSave();toast('草稿已自動匯入 ✓ 可直接編輯');
+});
+var btnCopyLetter=$('btnCopyLetter');
+if(btnCopyLetter)btnCopyLetter.addEventListener('click',function(){
+  if(!$('draftArea').value.trim()){toast('草稿還是空的喔');return;}
+  copyText($('draftArea').value,'邀請函全文已複製 ✓');
+});
+if(S.draft){$('draftArea').value=S.draft;renderPreview();}
+
+/* ---------- 圖檔上傳（AI 生成圖） ---------- */
+function renderImgs(){
+  var g=$('imgGrid');if(!g)return;
+  var h='';
+  imgs.forEach(function(im,i){
+    h+='<div class="img-card">'
+      +'<div class="img-thumb"><img src="'+im.dataURL+'" alt="邀請函設計圖 '+(i+1)+'"></div>'
+      +'<div class="img-meta">'
+      +'<div class="img-name" title="'+escW(im.name)+'">📎 '+escW(im.name)+'</div>'
+      +'<input type="text" class="img-cap" data-ci="'+i+'" placeholder="圖說／設計說明（選填，將隨 Word 檔匯出）" value="'+escW(im.caption||'')+'">'
+      +'<button type="button" class="btn-mini img-del" data-di="'+i+'">🗑 刪除</button>'
+      +'</div></div>';
+  });
+  if(!imgs.length)h='<p class="img-empty">尚未上傳圖片。點擊上方區域或拖曳圖片即可上傳。</p>';
+  g.innerHTML=h;
+  var cnt=$('imgCount');if(cnt)cnt.textContent='已上傳 '+imgs.length+' / 4 張';
+}
+function addFiles(fileList){
+  if(!fileList||!fileList.length)return;
+  Array.prototype.forEach.call(fileList,function(f){
+    if(!/^image\//.test(f.type)){toast('「'+f.name+'」不是圖片，已略過');return;}
+    if(f.size>8*1024*1024){toast('「'+f.name+'」超過 8MB，已略過');return;}
+    if(imgs.length>=4){toast('最多上傳 4 張圖片');return;}
+    var reader=new FileReader();
+    reader.onload=function(e){
+      imgs.push({name:f.name,dataURL:e.target.result,caption:''});
+      renderImgs();scheduleSave();toast('已上傳「'+f.name+'」 ✓');
+    };
+    reader.onerror=function(){toast('讀取「'+f.name+'」失敗，請重試');};
+    reader.readAsDataURL(f);
+  });
+}
+var fileInput=$('fileInput');
+if(fileInput)fileInput.addEventListener('change',function(){addFiles(fileInput.files);fileInput.value='';});
+var zone=$('uploadZone');
+if(zone){
+  zone.addEventListener('dragover',function(e){e.preventDefault();zone.classList.add('over');});
+  zone.addEventListener('dragleave',function(){zone.classList.remove('over');});
+  zone.addEventListener('drop',function(e){e.preventDefault();zone.classList.remove('over');if(e.dataTransfer&&e.dataTransfer.files)addFiles(e.dataTransfer.files);});
+}
+var imgGridEl=$('imgGrid');
+if(imgGridEl){
+  imgGridEl.addEventListener('click',function(e){
+    var del=e.target.closest?e.target.closest('.img-del'):null;
+    if(del){
+      var idx=+del.dataset.di;
+      var nm=imgs[idx]?imgs[idx].name:'';
+      imgs.splice(idx,1);
+      renderImgs();scheduleSave();
+      toast(nm?('已刪除「'+nm+'」'):'已刪除圖片');
+    }
+  });
+  imgGridEl.addEventListener('input',function(e){
+    if(e.target.classList&&e.target.classList.contains('img-cap')){
+      var i=+e.target.dataset.ci;
+      if(imgs[i]){imgs[i].caption=e.target.value;scheduleSave();}
+    }
+  });
+}
+renderImgs();
+
+/* ---------- Word 匯出 ---------- */
+function wval(s){s=(s||'').trim();return s?escW(s).replace(/\n/g,'<br>'):'<span style="color:#999999">（尚未填寫）</span>';}
+function hasAnyContent(){
+  var fields=[S.eventName,S.time,S.place,S.host,S.invitee,
+    S.core.salutation,S.core.greeting,S.core.intro,S.core.detail,S.core.value,S.core.closing,
+    S.prompt2,S.revised2,S.gen2,S.pName,S.pField,S.pRel,S.prompt3,S.fixNote,S.fix3,S.gen3,
+    S.prompt4a,S.hookFix,S.genHook,S.prompt4b,S.ctaFix,S.genCta,S.draft,S.q1,S.q2,S.q3];
+  return fields.some(function(f){return (f||'').trim();})||parseInt(S.starsSel||'0',10)>0||imgs.length>0;
+}
+function buildWordHTML(){
+  var now=new Date();
+  var dateStr=now.getFullYear()+'/'+pad2(now.getMonth()+1)+'/'+pad2(now.getDate())+' '+pad2(now.getHours())+':'+pad2(now.getMinutes());
+  var toneMap={formal:'正式且專業',warm:'溫馨且親切',creative:'熱情且創意',poetic:'文雅而詩意'};
+  var hookMap={passion:'熱情有創意',poetic:'充滿詩意',formal:'專業穩重'};
+  var ctaMap={polite:'禮貌正式',warm:'友好溫暖',urgent:'營造急迫感'};
+  var sv=parseInt(S.starsSel||'0',10);
+  var starTxt=sv>0?('★'.repeat(sv)+'☆'.repeat(5-sv)+'（'+sv+' / 5）'):'（尚未評分）';
+  var h='';
+  h+='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">';
+  h+='<head><meta charset="utf-8"><title>邀請函寫作與 AI 輔助工作坊學習紀錄</title>';
+  h+='<style>';
+  h+='body{font-family:"Microsoft JhengHei","PMingLiU","Noto Sans TC",sans-serif;font-size:12pt;line-height:1.8;color:#222222;}';
+  h+='h1{font-size:18pt;color:#8f2c1e;text-align:center;border-bottom:2.5pt solid #b8402f;padding-bottom:8pt;}';
+  h+='h2{font-size:14pt;color:#0e4a47;border-left:5pt solid #16635f;padding-left:8pt;margin-top:20pt;margin-bottom:6pt;}';
+  h+='table{border-collapse:collapse;width:100%;margin:8pt 0;}';
+  h+='td,th{border:1pt solid #999999;padding:5pt 9pt;font-size:11.5pt;vertical-align:top;}';
+  h+='th{background:#e0edea;}';
+  h+='.kv td:first-child{width:28%;background:#f7f4ea;font-weight:bold;}';
+  h+='.pre{background:#f6f1e4;border:1pt solid #d9cba6;padding:10pt;margin:6pt 0 12pt;font-size:11pt;}';
+  h+='.meta{color:#666666;font-size:10pt;text-align:center;}';
+  h+='.figcap{color:#666666;font-size:10pt;text-align:center;margin-top:2pt;}';
+  h+='.foot{margin-top:20pt;border-top:1pt solid #cccccc;padding-top:8pt;color:#666666;font-size:10pt;}';
+  h+='</style></head><body>';
+  h+='<h1>大一國文：邀請函寫作與 AI 輔助工作坊<br>學習紀錄</h1>';
+  h+='<p class="meta">匯出時間：'+dateStr+' ｜ 教學對象：大學生 ｜ 學習目標：掌握邀請函結構並運用 AI 提升寫作效率</p>';
+  h+='<h2>步驟一、邀請函的基本框架</h2>';
+  h+='<p><b>壹、活動內容設定</b></p>';
+  h+='<table class="kv">';
+  h+='<tr><td>活動名稱</td><td>'+wval(S.eventName)+'</td></tr>';
+  h+='<tr><td>時間（年・月・日・活動時間）</td><td>'+wval(S.time)+'</td></tr>';
+  h+='<tr><td>地點</td><td>'+wval(S.place)+'</td></tr>';
+  h+='<tr><td>主辦單位</td><td>'+wval(S.host)+'</td></tr>';
+  h+='<tr><td>受邀對象</td><td>'+wval(S.invitee)+'</td></tr>';
+  h+='<tr><td>整體語氣</td><td>'+(toneMap[S.tone]||'正式且專業')+'</td></tr>';
+  h+='</table>';
+  h+='<p><b>貳、邀請函六大結構：核心內容</b></p>';
+  h+='<table class="kv">';
+  var coreRows=[['受邀者稱謂',S.core.salutation],['開場問候',S.core.greeting],['活動介紹（目的／主題）',S.core.intro],['活動詳情（時間／地點／形式）',S.core.detail],['邀請內容（參與原因／價值）',S.core.value],['結尾致意',S.core.closing]];
+  coreRows.forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+wval(r[1])+'</td></tr>';});
+  h+='</table>';
+  h+='<h2>步驟二、AI 生成框架與修正</h2>';
+  h+='<p><b>壹、問題設定——提示語（STAR：角色・任務・對象・要求）</b></p><div class="pre">'+wval(S.prompt2)+'</div>';
+  h+='<p><b>貳、AI 生成內容（模擬結果）</b></p><div class="pre">'+wval(S.gen2)+'</div>';
+  h+='<p><b>參、修正與優化（修改後內容）</b></p><div class="pre">'+wval(S.revised2)+'</div>';
+  h+='<h2>步驟三、個性化語句撰寫（Show, Don\u2019t Tell）</h2>';
+  h+='<p><b>壹、背景資訊設定</b></p>';
+  h+='<table class="kv">';
+  h+='<tr><td>假設受邀者身份</td><td>'+wval(S.pName)+'</td></tr>';
+  h+='<tr><td>受邀者興趣／貢獻（與活動相關）</td><td>'+wval(S.pField)+'</td></tr>';
+  h+='<tr><td>與活動的連結點</td><td>'+wval(S.pRel)+'</td></tr>';
+  h+='</table>';
+  h+='<p><b>貳、提示語與 AI 生成個性化語句</b></p>';
+  h+='<p>【提示語】</p><div class="pre">'+wval(S.prompt3)+'</div>';
+  h+='<p>【AI 生成結果】</p><div class="pre">'+wval(S.gen3)+'</div>';
+  h+='<p><b>參、您的評價與修正</b>　1. 語氣是否適合：'+(S.eval3||'適合')+'</p>';
+  h+='<p>2. 必要調整的地方：</p><div class="pre">'+wval(S.fixNote)+'</div>';
+  h+='<p>3. 修改後的版本：</p><div class="pre">'+wval(S.fix3)+'</div>';
+  h+='<h2>步驟四、創意開場與結束語設計（Hook & CTA）</h2>';
+  h+='<p><b>壹、開場語練習</b>　風格：'+(hookMap[S.hookStyle]||'—')+'</p>';
+  h+='<p>【提示語】</p><div class="pre">'+wval(S.prompt4a)+'</div>';
+  h+='<p>【AI 生成開場語】</p><div class="pre">'+wval(S.genHook)+'</div>';
+  h+='<p>【感想與修改後的版本】</p><div class="pre">'+wval(S.hookFix)+'</div>';
+  h+='<p><b>貳、結束語練習</b>　風格：'+(ctaMap[S.ctaStyle]||'—')+' ｜ 回覆方式（RSVP）：'+wval(S.rsvp)+' ｜ 回覆期限：'+wval(S.deadline)+'</p>';
+  h+='<p>【提示語】</p><div class="pre">'+wval(S.prompt4b)+'</div>';
+  h+='<p>【AI 生成結束語】</p><div class="pre">'+wval(S.genCta)+'</div>';
+  h+='<p>【感想與修改後的版本】</p><div class="pre">'+wval(S.ctaFix)+'</div>';
+  h+='<h2>步驟五、綜合邀請函撰寫</h2><div class="pre">'+wval(S.draft)+'</div>';
+  if(imgs.length){
+    h+='<h2>步驟五（附）、邀請函 AI 生成圖檔（共 '+imgs.length+' 張）</h2>';
+    imgs.forEach(function(im,idx){
+      h+='<p style="text-align:center;margin-bottom:2pt"><b>圖 '+(idx+1)+'：'+escW(im.name)+'</b></p>';
+      h+='<p style="text-align:center"><img src="'+im.dataURL+'" alt="邀請函設計圖 '+(idx+1)+'" width="400" style="max-width:400px;border:1pt solid #cccccc;"></p>';
+      if((im.caption||'').trim())h+='<p class="figcap">圖說：'+escW(im.caption)+'</p>';
+    });
+  }
+  h+='<h2>步驟六、自我評估與反思</h2>';
+  h+='<p><b>AI 幫助程度：</b>'+starTxt+'</p>';
+  h+='<p><b>一、您認為 AI 在哪些方面提供了幫助？</b></p><div class="pre">'+wval(S.q1)+'</div>';
+  h+='<p><b>二、哪些部分需要進一步改進？</b></p><div class="pre">'+wval(S.q2)+'</div>';
+  h+='<p><b>三、未來，您會如何運用 AI 輔助寫作？</b></p><div class="pre">'+wval(S.q3)+'</div>';
+  h+='<p class="foot">※ 提醒：AI 輔助創作，但人來掌握品質。繳交前請務必再次校對受邀人姓名、時間、地點與敬語格式。<br>※ 本文件由「書信 × 邀請函 × AI 互動學習平台」之邀請函寫作工作坊自動匯出。</p>';
+  h+='</body></html>';
+  return h;
+}
+function exportWord(){
+  if(!hasAnyContent()){toast('目前還沒有任何內容，請先填寫工作坊 ✍');return;}
+  var html=buildWordHTML();
+  var blob;
+  try{
+    blob=new Blob(['\ufeff',html],{type:'application/msword;charset=utf-8'});
+  }catch(e){
+    toast('匯出失敗，請改用其他瀏覽器');return;
+  }
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');
+  var d=new Date();
+  var stamp=''+d.getFullYear()+pad2(d.getMonth()+1)+pad2(d.getDate());
+  a.href=url;
+  a.download='邀請函寫作工作坊學習紀錄_'+stamp+'.doc';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(function(){URL.revokeObjectURL(url);},3000);
+  toast(imgs.length?('Word 檔（含 '+imgs.length+' 張圖檔）下載中 📄 請上傳至課業輔導系統作業區'):'Word 檔下載中 📄 請上傳至課業輔導系統作業區');
+}
+document.querySelectorAll('.js-export').forEach(function(b){b.addEventListener('click',exportWord);});
+var btnExportWord=$('btnExportWord');
+if(btnExportWord)btnExportWord.addEventListener('click',exportWord);
+
+/* ---------- 完成橫幅 ---------- */
+function refreshDone(){
+  var b=$('doneBanner');if(!b)return;
+  var ok=parseInt(S.starsSel||'0',10)>0||(S.q1||'').trim().length>0;
+  b.classList.toggle('show',ok);
+}
+refreshDone();
+
+/* ---------- 重設 ---------- */
+var btnReset=$('btnReset');
+if(btnReset)btnReset.addEventListener('click',function(){
+  if(confirm('確定要清除全部工作坊進度（含已上傳圖檔）嗎？此操作無法復原。')){
+    try{localStorage.removeItem(KEY);}catch(e){}
+    location.reload();
+  }
+});
+
+/* ---------- 檢查清單 ---------- */
+function updateCheck(){
+  var boxes=document.querySelectorAll('.check-item input'),n=0;
+  boxes.forEach(function(b){
+    var item=b.closest('.check-item');
+    if(item)item.classList.toggle('checked',b.checked);
+    if(b.checked)n++;
+  });
+  var bar=$('checkBar');if(bar)bar.style.width=(n/boxes.length*100)+'%';
+  var txt=$('checkTxt');if(txt)txt.textContent='完成進度：'+n+' / '+boxes.length+(n===boxes.length?'　🎊 太棒了，可以上傳 Word 檔了！':'');
+}
+document.querySelectorAll('.check-item input').forEach(function(b){b.addEventListener('change',updateCheck);});
+
+document.querySelectorAll('#mobileMenu a').forEach(function(a){
+  a.addEventListener('click',function(){var c=$('navCheck');if(c)c.checked=false;});
+});
+window.addEventListener('scroll',function(){
+  var h=document.documentElement;
+  var pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  var pb=$('progressBar');if(pb)pb.style.width=pct+'%';
+  var tt=$('toTop');if(tt)tt.classList.toggle('show',h.scrollTop>600);
+},{passive:true});
+var toTop=$('toTop');
+if(toTop)toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
